@@ -22,10 +22,10 @@ const message = document.getElementById("message");
 actionButton.addEventListener("click", function () {
 
     message.textContent =
-        "Excelente! Você deu o primeiro passo. 🚀";
+        "Excelente! Você está pronto(a) para conhecer o universo da alta perfomance.🏎️ ";
 
     actionButton.textContent =
-        "Vamos começar!";
+        "Explorar carros";
 
 });
 
@@ -39,7 +39,7 @@ const learnButton = document.getElementById("learn-button");
 learnButton.addEventListener("click", function () {
 
     alert(
-        "Prepare-se para aprender, criar e experimentar!"
+        "Prepare-se para descobrir a potência, o design e a velocidade que definem os maiores ícones do automobilismo!"
     );
 
 });
