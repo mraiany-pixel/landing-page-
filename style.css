@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
+    background: #080808;
     color: #222;
     line-height: 1.6;
 }
@@ -32,14 +32,14 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background: #ffffff;
+    background: #0a0a0a;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}   border-bottom: 1px solid #252525;
 
 .logo {
     font-size: 1.5rem;
@@ -47,7 +47,7 @@ body {
 }
 
 .logo span {
-    color: #284C7E;
+    color: #c9a96e;
 }
 
 nav {
@@ -57,14 +57,14 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #d4d4d4;
     font-weight: 500;
 
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #284C7E;
+    color: #c9a96e;
 }
 
 .menu-button {
@@ -72,6 +72,7 @@ nav a:hover {
 
     border: none;
     background: none;
+    color: #ffffff;
 
     font-size: 1.8rem;
     cursor: pointer;
@@ -93,19 +94,19 @@ nav a:hover {
     background:
         linear-gradient(
             135deg,
-            #eef3f9,
-            #ffffff
+            #080808,
+            #171717
         );
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 750px;
 
     animation: aparecer 1s ease;
 }
 
 .subtitle {
-    color: #284C7E;
+    color: #c9a96e;
     font-size: 0.85rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -118,11 +119,12 @@ nav a:hover {
     line-height: 1.1;
 
     margin-bottom: 25px;
+    color: #ffffff;
 }
 
 .hero p:not(.subtitle) {
     font-size: 1.1rem;
-    color: #555;
+    color: #a8a8a8;
 
     max-width: 600px;
     margin-bottom: 30px;
@@ -134,14 +136,14 @@ nav a:hover {
 ========================= */
 
 .button {
-    border: none;
+    border:1px solid #c9a96e;
 
-    background: #284C7E;
-    color: white;
+    background: #c9a96e;
+    color: #080808;
 
     padding: 14px 28px;
 
-    border-radius: 8px;
+    border-radius: 4px;
 
     font-size: 1rem;
     font-weight: bold;
@@ -154,8 +156,12 @@ nav a:hover {
 .button:hover {
     transform: translateY(-3px);
 
+    background:transparent;
+
+    color: #c9a96e;
+
     box-shadow:
-        0 8px 20px rgba(40, 76, 126, 0.25);
+        0 8px 20px rgba(201, 169, 110, 0.02);
 }
 
 .secondary {
@@ -172,7 +178,7 @@ nav a:hover {
 
     font-weight: bold;
 
-    color: #284C7E;
+    color: #c9a966;
 }
 
 
@@ -183,7 +189,7 @@ nav a:hover {
 .benefits {
     padding: 100px 8%;
 
-    background: white;
+    background: #101010;
 }
 
 .section-title {
@@ -194,6 +200,7 @@ nav a:hover {
 
 .section-title h2 {
     font-size: 2.5rem;
+    color: #ffffff;
 }
 
 .cards {
@@ -211,9 +218,11 @@ nav a:hover {
 .card {
     padding: 35px;
 
-    border-radius: 15px;
+    border-radius: 8px;
 
-    background: #f5f7fa;
+    background: #181818;
+
+    border: 1px solid #292929;
 
     transition: 0.3s;
 }
@@ -222,13 +231,15 @@ nav a:hover {
     transform: translateY(-8px);
 
     box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.1);
+        0 15px 30px rgba(0, 0, 0, 0.35);
 }
 
 .icon {
     font-size: 2.5rem;
 
     margin-bottom: 15px;
+
+    color: #c9a96e;
 }
 
 .card h3 {
@@ -238,7 +249,7 @@ nav a:hover {
 }
 
 .card p {
-    color: #666;
+    color: #999999;
 }
 
 
@@ -249,9 +260,11 @@ nav a:hover {
 .about {
     padding: 100px 8%;
 
-    background: #2f2f2f;
+    background: #050505;
 
     color: white;
+
+    border-top:1px solid #222222;
 }
 
 .about > div {
@@ -264,10 +277,11 @@ nav a:hover {
     line-height: 1.2;
 
     margin-bottom: 20px;
+    color:#ffffff;
 }
 
 .about p:not(.subtitle) {
-    color: #ddd;
+    color: #b5b5b5;
 
     max-width: 650px;
 }
@@ -282,9 +296,9 @@ footer {
 
     text-align: center;
 
-    background: #1f1f1f;
+    background: #020202;
 
-    color: #aaa;
+    color: #777777;
 
     font-size: 0.9rem;
 }
@@ -335,7 +349,7 @@ footer {
 
         padding: 20px;
 
-        background: white;
+        background: #0a0a0a;
 
         flex-direction: column;
 
