@@ -216,7 +216,7 @@ nav a:hover {
 }
 
 .card {
-    padding: 35px;
+    padding: 24px;
 
     border-radius: 8px;
 
@@ -225,6 +225,8 @@ nav a:hover {
     border: 1px solid #292929;
 
     transition: 0.3s;
+
+    display-direction:column;
 }
 
 .card:hover {
@@ -395,6 +397,7 @@ footer {
     height:180px;
     object-fit:cover;
     display:block;
-    
+    border-radius:6px;
+
  }    
 
