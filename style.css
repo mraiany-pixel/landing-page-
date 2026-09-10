@@ -1,12 +1,12 @@
-/* ==========================================================
-   ELITE MOTORS
-   THE ART OF AUTOMOTIVE
-   ========================================================== */
+/* =====================================================
+   ELITE MOTORS — LUXURY AUTOMOTIVE
+   STYLE.CSS
+===================================================== */
 
 
-/* ==========================================================
+/* =========================
    RESET
-   ========================================================== */
+========================= */
 
 * {
     margin: 0;
@@ -20,125 +20,118 @@ html {
 
 body {
     background: #080808;
-    color: #f2f0eb;
+    color: #f5f5f5;
     font-family: "Arial", sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 button {
     font-family: inherit;
 }
 
-img {
-    width: 100%;
-    display: block;
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c9a96e;
 }
 
 
-/* ==========================================================
-   VARIÁVEIS
-   ========================================================== */
-
-:root {
-
-    --black: #080808;
-    --black-soft: #0d0d0d;
-    --black-card: #111111;
-
-    --white: #f2f0eb;
-    --white-soft: #bdbbb6;
-
-    --gold: #c7a86b;
-    --gold-light: #dfc58d;
-
-    --line: rgba(255, 255, 255, 0.12);
-    --line-gold: rgba(199, 168, 107, 0.35);
-
-    --serif: Georgia, "Times New Roman", serif;
-}
-
-
-/* ==========================================================
+/* =========================
    HEADER
-   ========================================================== */
+========================= */
 
 header {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-    height: 86px;
-
-    padding: 0 6%;
+    height: 82px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(8, 8, 8, 0.82);
+    padding: 0 6%;
 
+    background: rgba(8, 8, 8, 0.75);
     backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
-    z-index: 999;
+    z-index: 1000;
+
+    transition: 0.4s ease;
+}
+
+header.scrolled {
+    height: 70px;
+    background: rgba(5, 5, 5, 0.95);
 }
 
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo {
-    display: flex;
-    flex-direction: column;
-
-    font-family: var(--serif);
-
-    font-size: 25px;
-
-    letter-spacing: 6px;
-
-    line-height: 0.8;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    line-height: 1;
 }
 
 .logo span {
-    font-family: Arial, sans-serif;
+    display: block;
+
+    margin-top: 5px;
 
     font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 5px;
 
-    letter-spacing: 6px;
-
-    color: var(--gold);
-
-    margin-top: 10px;
+    color: #c9a96e;
 }
 
 
-/* NAV */
+/* =========================
+   NAV
+========================= */
 
 nav {
     display: flex;
     align-items: center;
-
     gap: 28px;
 }
 
 nav a {
     position: relative;
 
-    color: #aaa;
-
-    font-size: 10px;
-
-    letter-spacing: 1.8px;
-
+    font-size: 11px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+
+    color: #aaa;
 
     transition: 0.3s ease;
 }
@@ -147,1242 +140,951 @@ nav a::after {
     content: "";
 
     position: absolute;
-
     left: 0;
-    bottom: -9px;
+    bottom: -8px;
 
     width: 0;
     height: 1px;
 
-    background: var(--gold);
+    background: #c9a96e;
 
     transition: 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover {
     color: #fff;
 }
 
-nav a:hover::after,
-nav a.active::after {
+nav a:hover::after {
     width: 100%;
 }
 
 
-/* BOTÃO HEADER */
+/* =========================
+   HEADER BUTTON
+========================= */
 
 .menu-button {
-    border: 1px solid var(--line-gold);
+    padding: 11px 20px;
 
-    padding: 12px 19px;
+    border: 1px solid rgba(201, 169, 110, 0.6);
 
-    color: var(--gold);
+    color: #c9a96e;
 
-    font-size: 9px;
-
-    text-transform: uppercase;
-
+    font-size: 10px;
     letter-spacing: 2px;
+    text-transform: uppercase;
 
     transition: 0.3s ease;
 }
 
 .menu-button:hover {
-    background: var(--gold);
-
+    background: #c9a96e;
     color: #080808;
 }
 
 
-/* ==========================================================
-   HERO
-   ========================================================== */
-
-#inicio {
-    position: relative;
-
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    padding: 150px 8% 80px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.97) 0%,
-            rgba(0,0,0,0.82) 35%,
-            rgba(0,0,0,0.35) 75%,
-            rgba(0,0,0,0.72) 100%
-        ),
-        url("imagens/hero-car.jpg")
-        center / cover no-repeat;
-}
-
-
-/* brilho */
-
-#inicio::after {
-    content: "";
-
-    position: absolute;
-
-    width: 600px;
-    height: 600px;
-
-    right: -200px;
-    bottom: -250px;
-
-    background: rgba(199, 168, 107, 0.08);
-
-    filter: blur(120px);
-
-    border-radius: 50%;
-}
-
-
-/* CONTEÚDO */
-
-.hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    max-width: 760px;
-}
-
-.hero-content > p:first-child {
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 28px;
-}
-
-.hero-content h1 {
-    font-family: var(--serif);
-
-    font-weight: 400;
-
-    font-size: clamp(55px, 8vw, 105px);
-
-    line-height: 0.94;
-
-    letter-spacing: -4px;
-}
-
-.hero-content h1 span {
-    display: block;
-
-    color: var(--gold-light);
-
-    font-style: italic;
-}
-
-.hero-content > p:nth-of-type(2) {
-    max-width: 570px;
-
-    margin-top: 32px;
-
-    color: #aaa;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
-
-/* BOTÃO HERO */
-
-.hero-content > a {
-    display: inline-flex;
-
-    margin-top: 38px;
-
-    padding: 15px 25px;
-
-    border: 1px solid var(--gold);
-
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition: 0.35s ease;
-}
-
-.hero-content > a:hover {
-    background: var(--gold);
-
-    color: #080808;
-
-    transform: translateY(-3px);
-}
-
-
-/* ==========================================================
-   SEÇÕES GERAIS
-   ========================================================== */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section {
     position: relative;
 
     padding: 130px 8%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 section > p:first-child {
-    color: var(--gold);
+    margin-bottom: 20px;
 
-    font-size: 9px;
+    color: #c9a96e;
+
+    font-size: 10px;
+    font-weight: 600;
 
     letter-spacing: 4px;
-
-    margin-bottom: 22px;
+    text-transform: uppercase;
 }
 
 section h2 {
     max-width: 900px;
 
-    font-family: var(--serif);
+    margin-bottom: 25px;
 
-    font-size: clamp(42px, 6vw, 78px);
+    font-size: clamp(38px, 5vw, 75px);
 
-    line-height: 1;
-
-    font-weight: 400;
+    font-weight: 300;
+    line-height: 1.05;
 
     letter-spacing: -2px;
 }
 
 section h2 span {
-    color: var(--gold-light);
+    display: block;
+    color: #777;
+}
 
-    font-style: italic;
+section > p:not(:first-child) {
+    max-width: 650px;
+
+    color: #999;
+
+    font-size: 15px;
+    line-height: 1.9;
 }
 
 
-/* ==========================================================
-   MANIFESTO
-   ========================================================== */
+/* =========================
+   HERO
+========================= */
 
-#manifesto {
-    min-height: 650px;
+#inicio {
+    min-height: 100vh;
 
-    display: grid;
+    padding: 0 8%;
 
-    grid-template-columns: 100px 1fr;
-
-    gap: 50px;
-
+    display: flex;
     align-items: center;
 
-    background: #0a0a0a;
+    overflow: hidden;
 
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(201, 169, 110, 0.13),
+            transparent 35%
+        ),
+        #080808;
 }
 
-#manifesto::before {
-    content: "";
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 52%;
+
+    padding-top: 80px;
+}
+
+.hero-content > p:first-child {
+    margin-bottom: 25px;
+
+    color: #c9a96e;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.hero-content h1 {
+    margin-bottom: 30px;
+
+    font-size: clamp(50px, 7vw, 105px);
+
+    font-weight: 300;
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    color: #777;
+}
+
+.hero-content > p:nth-of-type(2) {
+    max-width: 510px;
+
+    margin-bottom: 35px;
+
+    color: #999;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-content > a {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(201, 169, 110, 0.7);
+
+    color: #c9a96e;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.hero-content > a:hover {
+    background: #c9a96e;
+    color: #080808;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 58%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            transparent 45%
+        );
+
+    transition: transform 0.3s ease;
+
+    overflow: hidden;
+}
+
+.hero-image::before {
+    content: "ELITE";
 
     position: absolute;
 
-    width: 1px;
-    height: 70%;
+    right: 8%;
+    bottom: 7%;
 
-    left: 8%;
+    color: rgba(255,255,255,0.035);
 
-    background: var(--line-gold);
+    font-size: 150px;
+    font-weight: 700;
+    letter-spacing: 15px;
 }
 
-#manifesto .manifesto-number {
-    position: relative;
 
-    color: var(--gold);
+/* =========================
+   MANIFESTO
+========================= */
 
-    font-size: 10px;
+#manifesto {
+    min-height: 75vh;
 
-    letter-spacing: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #0b0b0b;
 }
 
 #manifesto h2 {
-    max-width: 850px;
-}
-
-#manifesto h2 em {
-    display: block;
-
-    color: var(--gold-light);
-
-    font-style: italic;
-}
-
-#manifesto > div:last-child > p:last-child {
-    max-width: 650px;
-
-    margin-top: 38px;
-
-    color: #858585;
-
-    line-height: 2;
-
-    font-size: 14px;
+    max-width: 1000px;
 }
 
 
-/* ==========================================================
-   COLEÇÃO
-   ========================================================== */
+/* =========================
+   COLLECTION
+========================= */
 
 #colecao {
     background: #080808;
 }
 
-#colecao > p:nth-of-type(2) {
-    max-width: 580px;
-
-    color: #858585;
-
-    margin-top: 28px;
-
-    line-height: 1.9;
-}
-
-
-/* ABAS */
-
 .collection-tabs {
     display: flex;
+    flex-wrap: wrap;
 
     gap: 10px;
 
-    margin: 60px 0 45px;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid var(--line);
-
-    overflow-x: auto;
+    margin: 55px 0 45px;
 }
 
 .collection-tabs button {
+    padding: 12px 20px;
+
     background: transparent;
 
-    border: 1px solid #292929;
+    border: 1px solid #333;
 
-    color: #777;
-
-    padding: 12px 19px;
-
-    font-size: 9px;
-
-    letter-spacing: 1.7px;
-
-    text-transform: uppercase;
+    color: #888;
 
     cursor: pointer;
 
-    white-space: nowrap;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 
     transition: 0.3s ease;
 }
 
 .collection-tabs button:hover,
 .collection-tabs button.active {
-    background: var(--gold);
-
-    color: #080808;
-
-    border-color: var(--gold);
+    border-color: #c9a96e;
+    color: #c9a96e;
 }
 
 
-/* GRID */
+/* =========================
+   CARDS
+========================= */
 
 .cars {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 25px;
 }
 
-
-/* CARD */
-
 .car {
     position: relative;
 
-    background: #0e0e0e;
+    min-height: 510px;
 
-    border: 1px solid #202020;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background:
+        linear-gradient(
+            180deg,
+            #141414,
+            #0c0c0c
+        );
+
+    border: 1px solid rgba(255,255,255,0.07);
 
     overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.car:hover {
+    border-color: rgba(201, 169, 110, 0.5);
+}
+
+.car-image {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.08),
+            transparent 55%
+        );
 
     transition: 0.5s ease;
 }
 
-.car:hover {
-    border-color: var(--line-gold);
-
-    transform: translateY(-8px);
+.car:hover .car-image {
+    transform: scale(1.04);
 }
 
-
-/* IMAGEM */
-
-.car-image {
+.car > *:not(.car-image) {
     position: relative;
-
-    height: 420px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #181818,
-            #0b0b0b
-        );
-
-    overflow: hidden;
+    z-index: 2;
 }
 
-.car-image img {
-    height: 100%;
+.car > p:first-of-type {
+    margin-bottom: 5px;
 
-    object-fit: cover;
-
-    transition: 0.7s ease;
-}
-
-.car:hover .car-image img {
-    transform: scale(1.06);
-}
-
-
-/* caso ainda não tenha imagem */
-
-.car-image:empty::after {
-    content: "IMAGE";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    color: #333;
-
-    font-size: 10px;
-
-    letter-spacing: 5px;
-}
-
-
-/* TEXTOS */
-
-.car > p {
-    margin: 25px 30px 8px;
-
-    color: var(--gold);
+    color: #c9a96e;
 
     font-size: 9px;
-
     letter-spacing: 3px;
 }
 
 .car h3 {
-    margin: 0 30px;
+    margin-bottom: 8px;
 
-    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 300;
 
-    font-size: 39px;
-
-    font-weight: 400;
+    letter-spacing: -1px;
 }
 
 .car > span {
-    display: block;
+    display: inline-block;
 
-    margin: 10px 30px;
+    width: fit-content;
 
-    color: #666;
+    margin-bottom: 15px;
+
+    padding: 5px 9px;
+
+    border: 1px solid #444;
+
+    color: #888;
 
     font-size: 8px;
-
     letter-spacing: 2px;
 }
 
-.car > p:nth-of-type(2) {
-    color: #777;
+.car > p:last-of-type {
+    max-width: 480px;
 
-    line-height: 1.7;
+    margin-bottom: 20px;
+
+    color: #999;
 
     font-size: 13px;
-
-    max-width: 450px;
 }
 
 .car > a {
-    display: inline-block;
+    width: fit-content;
 
-    margin: 12px 30px 30px;
+    color: #fff;
 
-    padding-bottom: 8px;
-
-    border-bottom: 1px solid var(--gold);
-
-    color: var(--gold);
-
-    font-size: 9px;
-
+    font-size: 10px;
     letter-spacing: 2px;
-
     text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.car > a:hover {
+    color: #c9a96e;
 }
 
 
-/* ==========================================================
-   MARCAS
-   ========================================================== */
+/* =========================
+   BRANDS
+========================= */
 
 #marcas {
-    background: #0d0d0d;
-}
-
-#marcas > p {
-    color: var(--gold);
-}
-
-#marcas > h2 {
-    margin-bottom: 65px;
+    background: #0b0b0b;
 }
 
 .brands {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+    margin-top: 65px;
+
+    border-top: 1px solid #292929;
+    border-left: 1px solid #292929;
 }
 
 .brands > div {
-    min-height: 220px;
+    min-height: 190px;
 
-    padding: 35px;
+    padding: 30px;
 
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border-right: 1px solid #292929;
+    border-bottom: 1px solid #292929;
 
-    transition: 0.4s ease;
+    transition: 0.3s ease;
 }
 
 .brands > div:hover {
-    background: #131313;
-
-    border-color: var(--line-gold);
+    background: #111;
 }
 
 .brands span {
-    color: var(--gold);
+    display: block;
+
+    margin-bottom: 30px;
+
+    color: #c9a96e;
 
     font-size: 9px;
-
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .brands h3 {
-    margin-top: 50px;
+    margin-bottom: 8px;
 
-    font-family: var(--serif);
-
-    font-size: 28px;
-
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
 }
 
 .brands p {
-    margin-top: 12px;
-
-    color: #666;
-
+    color: #777;
     font-size: 12px;
-
-    line-height: 1.6;
 }
 
 
-/* ==========================================================
-   MÁQUINAS
-   ========================================================== */
+/* =========================
+   MACHINES
+========================= */
 
 #maquinas {
     background: #080808;
 }
 
-#maquinas > h2 {
-    margin-bottom: 100px;
-}
-
-
-/* DETALHES DOS CARROS */
-
 #maquinas article {
-    display: grid;
-
-    grid-template-columns: 1.2fr 0.8fr;
-
-    min-height: 650px;
-
-    margin-bottom: 130px;
-
-    border-top: 1px solid var(--line);
-
-    background: #0d0d0d;
-}
-
-#maquinas article > div:first-child {
     min-height: 550px;
 
-    background: #151515;
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    background: #0d0d0d;
+
+    border: 1px solid #222;
 
     overflow: hidden;
 }
 
-#maquinas article > div:first-child img {
-    height: 100%;
+#maquinas article > div:first-child {
+    min-height: 450px;
 
-    object-fit: cover;
-
-    transition: 0.7s ease;
+    background:
+        radial-gradient(
+            circle,
+            #242424,
+            #0a0a0a
+        );
 }
-
-#maquinas article:hover img {
-    transform: scale(1.04);
-}
-
-
-/* INFORMAÇÕES */
 
 #maquinas article > div:last-child {
-    padding: 70px 55px;
+    padding: 60px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 }
 
 #maquinas article > div:last-child > p:first-child {
-    color: var(--gold);
+    color: #c9a96e;
 
-    font-size: 9px;
-
-    letter-spacing: 3px;
+    font-size: 10px;
+    letter-spacing: 4px;
 }
 
-#maquinas article h3 {
-    margin-top: 10px;
+#maquinas h3 {
+    margin: 10px 0 20px;
 
-    font-family: var(--serif);
-
-    font-size: 62px;
-
-    font-weight: 400;
+    font-size: 55px;
+    font-weight: 300;
 }
 
 #maquinas article > div:last-child > p:nth-of-type(2) {
-    margin-top: 25px;
+    color: #999;
 
-    color: #777;
-
+    font-size: 14px;
     line-height: 1.9;
-
-    font-size: 13px;
 }
 
-
-/* ESPECIFICAÇÕES */
-
 .specifications {
-    display: grid;
+    margin-top: 40px;
 
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    margin-top: 50px;
-
-    border-top: 1px solid var(--line);
-
-    border-bottom: 1px solid var(--line);
+    border-top: 1px solid #292929;
 }
 
 .specifications div {
-    padding: 20px 12px;
-
-    border-right: 1px solid var(--line);
-}
-
-.specifications div:last-child {
-    border-right: none;
+    padding: 20px 10px 0 0;
 }
 
 .specifications span {
     display: block;
 
-    color: #555;
+    margin-bottom: 7px;
 
-    font-size: 8px;
+    color: #666;
 
-    letter-spacing: 1.5px;
-
-    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .specifications strong {
-    color: #ddd;
-
-    font-size: 10px;
-
+    font-size: 13px;
     font-weight: 400;
 }
 
 
-/* ==========================================================
+/* =========================
    PERFORMANCE
-   ========================================================== */
+========================= */
 
 #performance {
-    background: #0d0d0d;
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-}
-
-#performance > p:nth-of-type(2) {
-    max-width: 650px;
-
-    margin-top: 30px;
-
-    color: #777;
-
-    line-height: 1.8;
-
-    font-size: 14px;
+    background: #0b0b0b;
 }
 
 .performance-data {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    margin-top: 80px;
+    margin-top: 70px;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #292929;
+    border-left: 1px solid #292929;
 }
 
 .performance-data > div {
-    position: relative;
+    padding: 35px 25px;
 
-    padding: 45px 30px;
-
-    min-height: 260px;
-
-    border-right: 1px solid var(--line);
+    border-right: 1px solid #292929;
+    border-bottom: 1px solid #292929;
 }
 
-.performance-data > div:first-child {
-    border-left: 1px solid var(--line);
-}
+.performance-data span {
+    display: block;
 
-.performance-data span:first-child {
-    color: var(--gold);
+    margin-bottom: 40px;
+
+    color: #c9a96e;
 
     font-size: 9px;
-
     letter-spacing: 2px;
 }
 
 .performance-data strong {
     display: block;
 
-    margin-top: 60px;
+    margin-bottom: 8px;
 
-    font-family: var(--serif);
-
-    font-size: 55px;
-
-    font-weight: 400;
+    font-size: 52px;
+    font-weight: 300;
 }
 
 .performance-data p {
-    color: var(--gold);
+    color: #666;
 
     font-size: 9px;
-
     letter-spacing: 2px;
-
-    margin-top: 5px;
 }
 
 
-/* ==========================================================
-   LUXO
-   ========================================================== */
+/* =========================
+   LUXURY
+========================= */
 
 #luxo {
     background: #080808;
 }
 
-#luxo > h2 {
-    margin-bottom: 70px;
-}
-
 .luxury-details {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+    margin-top: 70px;
+
+    border-top: 1px solid #292929;
+    border-left: 1px solid #292929;
 }
 
 .luxury-details article {
-    min-height: 300px;
+    min-height: 270px;
 
-    padding: 45px;
+    padding: 40px;
 
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border-right: 1px solid #292929;
+    border-bottom: 1px solid #292929;
 
-    transition: 0.4s ease;
+    transition: 0.3s ease;
 }
 
 .luxury-details article:hover {
     background: #101010;
-
-    border-color: var(--line-gold);
 }
 
 .luxury-details span {
-    color: var(--gold);
+    color: #c9a96e;
 
     font-size: 9px;
-
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 .luxury-details h3 {
-    margin-top: 70px;
+    margin: 25px 0 12px;
 
-    font-family: var(--serif);
-
-    font-size: 34px;
-
-    font-weight: 400;
+    font-size: 27px;
+    font-weight: 300;
 }
 
 .luxury-details p {
-    max-width: 500px;
-
-    margin-top: 18px;
-
     color: #777;
 
-    line-height: 1.8;
-
     font-size: 13px;
+    line-height: 1.8;
 }
 
 
-/* ==========================================================
-   TECNOLOGIA
-   ========================================================== */
+/* =========================
+   TECHNOLOGY
+========================= */
 
 #tecnologia {
-    background: #0d0d0d;
-}
-
-#tecnologia > h2 {
-    margin-bottom: 75px;
+    background: #0b0b0b;
 }
 
 .technology {
-    border-top: 1px solid var(--line);
+    margin-top: 70px;
 }
 
 .technology article {
     display: grid;
 
-    grid-template-columns: 100px 1fr 50px;
+    grid-template-columns: 80px 1fr;
 
-    align-items: center;
+    padding: 30px 0;
 
-    gap: 30px;
-
-    padding: 35px 10px;
-
-    border-bottom: 1px solid var(--line);
-
-    transition: 0.4s ease;
+    border-top: 1px solid #292929;
 }
 
-.technology article:hover {
-    padding-left: 25px;
-
-    background: #111;
+.technology article:last-child {
+    border-bottom: 1px solid #292929;
 }
 
-.technology article > span:first-child {
-    color: var(--gold);
+.technology article > span {
+    color: #c9a96e;
 
-    font-size: 9px;
-
+    font-size: 10px;
     letter-spacing: 2px;
 }
 
 .technology h3 {
-    font-family: var(--serif);
+    margin-bottom: 5px;
 
-    font-size: 29px;
-
-    font-weight: 400;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 .technology p {
-    max-width: 650px;
+    color: #777;
 
-    margin-top: 8px;
-
-    color: #707070;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-.technology article > span:last-child {
-    color: var(--gold);
-
-    font-size: 20px;
+    font-size: 13px;
 }
 
 
-/* ==========================================================
+/* =========================
    HISTÓRIA
-   ========================================================== */
+========================= */
 
 #historia {
     background: #080808;
 }
 
-#historia > p:nth-of-type(2) {
-    max-width: 650px;
-
-    margin-top: 30px;
-
-    color: #777;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
 .timeline {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    margin-top: 80px;
+    margin-top: 70px;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #292929;
 }
 
 .timeline article {
-    min-height: 260px;
+    min-height: 250px;
 
     padding: 35px 25px;
 
-    border-right: 1px solid var(--line);
+    border-right: 1px solid #292929;
 }
 
 .timeline article:first-child {
-    border-left: 1px solid var(--line);
+    border-left: 1px solid #292929;
 }
 
 .timeline span {
-    color: var(--gold);
+    color: #c9a96e;
 
-    font-size: 8px;
-
+    font-size: 9px;
     letter-spacing: 3px;
 }
 
 .timeline h3 {
-    margin-top: 65px;
+    margin: 30px 0 10px;
 
-    font-family: var(--serif);
-
-    font-size: 27px;
-
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
 }
 
 .timeline p {
-    margin-top: 12px;
-
-    color: #666;
+    color: #777;
 
     font-size: 12px;
-
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
-/* ==========================================================
+/* =========================
    EXPERIÊNCIA
-   ========================================================== */
+========================= */
 
 #experiencia {
-    min-height: 750px;
+    min-height: 90vh;
 
     display: flex;
-
     align-items: center;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.96),
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.85)
-        ),
-        url("imagens/experience-car.jpg")
-        center / cover no-repeat;
+            #080808 20%,
+            rgba(8,8,8,0.65),
+            #080808
+        );
 }
 
 #experiencia > div {
-    max-width: 750px;
-
-    position: relative;
-
-    z-index: 2;
+    max-width: 650px;
 }
 
 #experiencia h2 {
-    font-size: clamp(48px, 7vw, 90px);
+    font-size: clamp(45px, 6vw, 85px);
 }
 
 #experiencia > div > p:last-child {
-    max-width: 550px;
+    margin-top: 30px;
 
-    margin-top: 35px;
-
-    color: #aaa;
-
-    font-size: 14px;
-
-    line-height: 2;
+    color: #999;
 }
 
 
-/* ==========================================================
+/* =========================
    FILOSOFIA
-   ========================================================== */
+========================= */
 
 #filosofia {
-    min-height: 600px;
+    min-height: 70vh;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
 
-    background: #0d0d0d;
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    background: #0b0b0b;
 }
 
 #filosofia h2 {
-    font-size: clamp(60px, 9vw, 120px);
-
-    line-height: 0.9;
+    font-size: clamp(55px, 8vw, 110px);
 }
 
-#filosofia > p:last-child {
-    margin-top: 35px;
-
-    color: #666;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
+#filosofia h2 span {
+    color: #c9a96e;
 }
 
 
-/* ==========================================================
+/* =========================
    CONTATO
-   ========================================================== */
+========================= */
 
 #contato {
-    min-height: 650px;
+    min-height: 65vh;
 
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
 
-    align-items: center;
-
-    text-align: center;
-
-    background: #080808;
-}
-
-#contato > h2 {
-    margin: auto;
-
-    max-width: 900px;
-}
-
-#contato > p:nth-of-type(2) {
-    max-width: 550px;
-
-    margin: 30px auto;
-
-    color: #777;
-
-    font-size: 13px;
-
-    line-height: 1.8;
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(201,169,110,0.08),
+            transparent 35%
+        );
 }
 
 #contato > a {
-    display: inline-block;
+    width: fit-content;
 
-    padding: 16px 27px;
+    margin-top: 35px;
 
-    border: 1px solid var(--gold);
+    padding: 15px 25px;
 
-    color: var(--gold);
+    border: 1px solid #c9a96e;
 
-    font-size: 9px;
+    color: #c9a96e;
 
+    font-size: 10px;
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
-    transition: 0.35s ease;
+    transition: 0.3s ease;
 }
 
 #contato > a:hover {
-    background: var(--gold);
-
+    background: #c9a96e;
     color: #080808;
 }
 
 
-/* ==========================================================
+/* =========================
    FOOTER
-   ========================================================== */
+========================= */
 
 footer {
-    padding: 70px 8% 30px;
+    padding: 80px 8% 30px;
 
     background: #050505;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #222;
 }
 
-
-/* MARCA */
-
 .footer-brand {
-    display: flex;
-
-    flex-direction: column;
-
-    line-height: 0.8;
+    margin-bottom: 70px;
 }
 
 .footer-brand strong {
-    font-family: var(--serif);
+    display: block;
 
     font-size: 32px;
-
-    font-weight: 400;
-
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 }
 
 .footer-brand span {
-    margin-top: 10px;
-
-    color: var(--gold);
-
-    font-size: 8px;
-
-    letter-spacing: 6px;
-}
-
-.footer-main > p {
-    margin-top: 20px;
-
-    color: #555;
+    color: #c9a96e;
 
     font-size: 9px;
-
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
-
-
-/* LINKS */
 
 .footer-links {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    gap: 30px;
-
-    margin-top: 70px;
+    gap: 40px;
 
     padding-bottom: 60px;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #222;
 }
 
 .footer-links div {
     display: flex;
-
     flex-direction: column;
-
-    gap: 13px;
+    gap: 10px;
 }
 
 .footer-links strong {
-    color: var(--gold);
+    margin-bottom: 15px;
 
-    font-size: 8px;
+    color: #c9a96e;
 
+    font-size: 9px;
     letter-spacing: 3px;
-
-    margin-bottom: 10px;
 }
 
 .footer-links a {
@@ -1390,7 +1092,7 @@ footer {
 
     color: #666;
 
-    font-size: 11px;
+    font-size: 12px;
 
     transition: 0.3s ease;
 }
@@ -1399,67 +1101,52 @@ footer {
     color: #fff;
 }
 
-
-/* FINAL */
-
 .footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
     padding-top: 25px;
 
-    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    font-size: 8px;
+    color: #555;
 
-    letter-spacing: 1.5px;
+    font-size: 9px;
+    letter-spacing: 1px;
 }
 
 .footer-bottom a {
-    color: #777;
+    color: #999;
 
     transition: 0.3s ease;
 }
 
 .footer-bottom a:hover {
-    color: var(--gold);
+    color: #c9a96e;
 }
 
 
-/* ==========================================================
-   MENU MOBILE
-   ========================================================== */
+/* =========================
+   ANIMAÇÕES
+========================= */
 
-.menu-toggle {
-    display: none;
+.hidden {
+    opacity: 0;
+    transform: translateY(35px);
 
-    width: 35px;
-
-    background: transparent;
-
-    border: none;
-
-    cursor: pointer;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
-.menu-toggle span {
-    display: block;
-
-    width: 100%;
-    height: 1px;
-
-    background: #fff;
-
-    margin: 7px 0;
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-/* ==========================================================
-   RESPONSIVIDADE — TABLET
-   ========================================================== */
+/* =========================
+   RESPONSIVIDADE
+========================= */
 
 @media (max-width: 1100px) {
 
@@ -1468,11 +1155,7 @@ footer {
     }
 
     nav a {
-        font-size: 8px;
-    }
-
-    .menu-button {
-        display: none;
+        font-size: 9px;
     }
 
     .cars {
@@ -1480,30 +1163,27 @@ footer {
     }
 
     .brands {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .performance-data {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .timeline {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
 
 
-/* ==========================================================
-   RESPONSIVIDADE — CELULAR
-   ========================================================== */
-
-@media (max-width: 750px) {
+@media (max-width: 800px) {
 
     header {
-        height: 72px;
-
-        padding: 0 6%;
+        padding: 0 5%;
     }
 
     nav {
@@ -1511,196 +1191,134 @@ footer {
     }
 
     .menu-button {
-        display: none;
+        padding: 10px 14px;
     }
-
-    .menu-toggle {
-        display: block;
-    }
-
 
     section {
-        padding: 90px 6%;
+        padding: 100px 6%;
     }
-
 
     #inicio {
-        padding: 130px 6% 80px;
-
-        min-height: 100vh;
+        padding: 0 6%;
     }
 
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+        opacity: 0.25;
+    }
 
     .hero-content h1 {
         font-size: 55px;
-
-        letter-spacing: -2px;
+        letter-spacing: -3px;
     }
-
-
-    #manifesto {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-
-        min-height: auto;
-    }
-
-
-    #manifesto::before {
-        display: none;
-    }
-
-
-    .collection-tabs {
-        margin-top: 40px;
-    }
-
-
-    .car-image {
-        height: 300px;
-    }
-
-
-    .brands {
-        grid-template-columns: 1fr;
-    }
-
 
     #maquinas article {
         grid-template-columns: 1fr;
-
-        margin-bottom: 80px;
     }
-
 
     #maquinas article > div:first-child {
-        min-height: 350px;
+        min-height: 300px;
     }
-
 
     #maquinas article > div:last-child {
-        padding: 45px 25px;
+        padding: 40px;
     }
-
-
-    #maquinas article h3 {
-        font-size: 48px;
-    }
-
-
-    .specifications {
-        grid-template-columns: 1fr;
-    }
-
-
-    .specifications div {
-        border-right: none;
-
-        border-bottom: 1px solid var(--line);
-    }
-
-
-    .specifications div:last-child {
-        border-bottom: none;
-    }
-
-
-    .performance-data {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .performance-data > div {
-        min-height: 190px;
-
-        padding: 30px 20px;
-    }
-
-
-    .performance-data strong {
-        margin-top: 40px;
-
-        font-size: 38px;
-    }
-
 
     .luxury-details {
         grid-template-columns: 1fr;
     }
 
-
-    .luxury-details article {
-        min-height: 250px;
+    .brands {
+        grid-template-columns: 1fr;
     }
 
-
-    .technology article {
-        grid-template-columns: 45px 1fr 30px;
-
-        gap: 12px;
+    .performance-data {
+        grid-template-columns: 1fr 1fr;
     }
-
-
-    .technology h3 {
-        font-size: 22px;
-    }
-
 
     .timeline {
         grid-template-columns: 1fr;
     }
 
-
-    .timeline article {
-        border-left: 1px solid var(--line);
-    }
-
-
-    #experiencia {
-        min-height: 650px;
-    }
-
-
-    #filosofia {
-        min-height: 500px;
-    }
-
-
     .footer-links {
         grid-template-columns: 1fr;
-
-        gap: 45px;
     }
-
 
     .footer-bottom {
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 15px;
     }
 
 }
 
 
-/* ==========================================================
-   SCROLLBAR
-   ========================================================== */
+@media (max-width: 500px) {
 
-::-webkit-scrollbar {
-    width: 7px;
-}
+    .logo {
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
 
-::-webkit-scrollbar-track {
-    background: #050505;
-}
+    .logo span {
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #292929;
-}
+    .menu-button {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gold);
+    section {
+        padding: 85px 5%;
+    }
+
+    section h2 {
+        font-size: 42px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .collection-tabs {
+        gap: 7px;
+    }
+
+    .collection-tabs button {
+        padding: 10px 12px;
+        font-size: 8px;
+    }
+
+    .car {
+        min-height: 470px;
+        padding: 25px;
+    }
+
+    .car h3 {
+        font-size: 32px;
+    }
+
+    .performance-data {
+        grid-template-columns: 1fr;
+    }
+
+    .performance-data strong {
+        font-size: 45px;
+    }
+
+    .specifications {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #maquinas h3 {
+        font-size: 42px;
+    }
+
 }
