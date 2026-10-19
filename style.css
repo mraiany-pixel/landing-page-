@@ -76,13 +76,11 @@ header {
   font-size: 1.2rem;
 }
 
-.logo-text span {
-  color: var(--red-accent);
-}
+.logo-text span { color: var(--red-accent); }
 
 .nav-menu {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   list-style: none;
 }
 
@@ -90,20 +88,18 @@ header {
   color: var(--text-main);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: 0.3s;
 }
 
-.nav-menu a:hover {
-  color: var(--red-accent);
-}
+.nav-menu a:hover { color: var(--red-accent); }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .cart-trigger {
@@ -156,10 +152,21 @@ header {
   box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
 }
 
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #fff;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 /* HERO */
 .hero {
-  min-height: 80vh;
-  background: linear-gradient(rgba(10,10,12,0.75), rgba(10,10,12,0.98)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  min-height: 75vh;
+  background: linear-gradient(rgba(10,10,12,0.8), rgba(10,10,12,0.98)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 0 5%;
@@ -186,7 +193,7 @@ header {
 
 .hero h1 {
   font-family: var(--font-title);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1.1;
@@ -196,13 +203,65 @@ header {
 .hero h1 span { color: var(--red-accent); }
 
 .hero-slogan {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #d1d5e0;
   margin-bottom: 30px;
   border-left: 3px solid var(--red-accent);
   padding-left: 15px;
   display: inline-block;
   text-align: left;
+}
+
+/* PRODUTOS OFERECIDOS (CANVA) */
+.offered-section {
+  background: #060608;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 60px 5%;
+}
+
+.offered-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.offered-title-box h2 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.offered-title-box h2.red-title {
+  color: var(--red-accent);
+}
+
+.red-line {
+  width: 120px;
+  height: 4px;
+  background-color: var(--red-accent);
+  margin: 15px 0 35px 0;
+}
+
+.offered-list {
+  border-left: 3px solid var(--red-accent);
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.offered-item-title {
+  color: var(--red-accent);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.offered-item-desc {
+  color: #e0e0e0;
+  font-size: 0.95rem;
 }
 
 /* CATÁLOGO E ABAS */
@@ -235,7 +294,7 @@ header {
   margin-bottom: 35px;
 }
 
-.tab-btn {
+.tab-btn, .service-tab-btn {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-main);
@@ -247,7 +306,8 @@ header {
   transition: 0.3s;
 }
 
-.tab-btn:hover, .tab-btn.active {
+.tab-btn:hover, .tab-btn.active,
+.service-tab-btn:hover, .service-tab-btn.active {
   background-color: var(--red-accent);
   border-color: var(--red-accent);
   color: #fff;
@@ -342,16 +402,83 @@ header {
   font-family: var(--font-body);
 }
 
-/* OFICINA */
-.workshop-section {
-  background: #0d0e12;
+/* SERVIÇOS VARIADOS */
+.varied-services-section {
+  background: #0c0d11;
   border-top: 1px solid var(--border-color);
   padding: 60px 5%;
-  margin-top: 60px;
+}
+
+.services-selection-grid {
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.service-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-item-card:hover {
+  border-color: var(--red-accent);
+}
+
+.service-item-card.selected {
+  border-color: var(--red-accent);
+  background: rgba(229, 9, 20, 0.08);
+}
+
+.service-checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--red-accent);
+  margin-top: 3px;
+}
+
+.selected-services-summary {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--red-accent);
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.summary-info {
+  display: flex;
+  gap: 25px;
+  font-size: 1rem;
+}
+
+.estimate-text strong {
+  color: var(--red-accent);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+}
+
+/* OFICINA */
+.workshop-section {
+  background: #07080a;
+  border-top: 1px solid var(--border-color);
+  padding: 60px 5%;
 }
 
 .workshop-wrapper {
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
@@ -529,7 +656,6 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.85rem;
-  margin-top: 60px;
 }
 
 .footer-logo {

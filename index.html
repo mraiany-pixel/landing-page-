@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,15 +27,17 @@
   <header>
     <div class="header-container">
       <a href="#" class="logo-box">
-        <img src="127181_2.jpg" alt="Logótipo Drive Zone" class="logo-img" onerror="this.style.display='none'">
+        <img src="127181_2.jpg" alt="Logo Drive Zone" class="logo-img" onerror="this.style.display='none'">
         <span class="logo-text">DRIVE <span>ZONE</span></span>
       </a>
 
       <nav>
         <ul class="nav-menu">
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#produtos">Catálogo</a></li>
-          <li><a href="#oficina">Oficina</a></li>
+          <li><a href="#oferecidos">Categorias</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#servicos-variados">Serviços</a></li>
+          <li><a href="#oficina">Agendamento</a></li>
         </ul>
       </nav>
 
@@ -44,7 +46,7 @@
           <i class="fa-solid fa-cart-shopping"></i>
           <span class="cart-count" id="cart-counter">0</span>
         </button>
-        <a href="#oficina" class="btn-main"><i class="fa-solid fa-calendar-days"></i> Agendar</a>
+        <a href="#servicos-variados" class="btn-main"><i class="fa-solid fa-wrench"></i> Monte seu Serviço</a>
       </div>
     </div>
   </header>
@@ -57,29 +59,96 @@
       <p class="hero-slogan">"Deixe seu carro a sua cara na Drive Zone, seu carro, seu estilo."</p>
       <div>
         <a href="#produtos" class="btn-main"><i class="fa-solid fa-shop"></i> Explorar Catálogo</a>
+        <a href="#servicos-variados" class="btn-main btn-secondary"><i class="fa-solid fa-list-check"></i> Serviços Variados</a>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE CATÁLOGO & ABAS -->
+  <!-- PRODUTOS OFERECIDOS (ESTILO CANVA) -->
+  <section class="offered-section" id="oferecidos">
+    <div class="offered-wrapper">
+      <div class="offered-title-box">
+        <h2>PRODUTOS</h2>
+        <h2 class="red-title">OFERECIDOS</h2>
+        <div class="red-line"></div>
+      </div>
+
+      <div class="offered-list">
+        <div class="offered-item">
+          <div class="offered-item-title">PERSONALIZAÇÃO</div>
+          <div class="offered-item-desc">Adesivos, capas para volante e detalhes decorativos.</div>
+        </div>
+
+        <div class="offered-item">
+          <div class="offered-item-title">CONFORTO E ORGANIZAÇÃO</div>
+          <div class="offered-item-desc">Suportes para celular e organizadores para bancos e porta-malas.</div>
+        </div>
+
+        <div class="offered-item">
+          <div class="offered-item-title">ILUMINAÇÃO</div>
+          <div class="offered-item-desc">Lâmpadas automotivas e luzes decorativas.</div>
+        </div>
+
+        <div class="offered-item">
+          <div class="offered-item-title">CUIDADOS COM O CARRO</div>
+          <div class="offered-item-desc">Panos de microfibra, produtos de limpeza e aromatizantes.</div>
+        </div>
+
+        <div class="offered-item">
+          <div class="offered-item-title">PRATICIDADE</div>
+          <div class="offered-item-desc">Carregadores veiculares e cabos USB.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE PRODUTOS -->
   <section class="catalog-section" id="produtos">
     <div class="section-header">
-      <h2>Catálogo Profissional</h2>
-      <p>Selecione uma categoria para visualizar os melhores acessórios e serviços</p>
+      <h2>Catálogo <span>Drive Zone</span></h2>
+      <p>Explore nossas rodas, personalizações internas e acessórios selecionados</p>
     </div>
 
-    <!-- ABAS DE NAVEGAÇÃO -->
+    <!-- ABAS DO CATÁLOGO -->
     <div class="tabs-container">
       <button class="tab-btn active" data-filter="all">Todos os Itens</button>
       <button class="tab-btn" data-filter="rodas">Rodas & Performance</button>
-      <button class="tab-btn" data-filter="películas">Películas & Estética</button>
-      <button class="tab-btn" data-filter="internos">Acessórios Internos</button>
-      <button class="tab-btn" data-filter="capas">Capas & Personalização</button>
-      <button class="tab-btn" data-filter="oficina">Oficina & Serviços</button>
+      <button class="tab-btn" data-filter="internos">Produtos Parte Interna</button>
+      <button class="tab-btn" data-filter="iluminacao">Iluminação & LED</button>
+      <button class="tab-btn" data-filter="organizacao">Conforto & Praticidade</button>
+      <button class="tab-btn" data-filter="cuidados">Cuidados & Limpeza</button>
     </div>
 
     <!-- GRELHA DE PRODUTOS -->
     <div class="products-grid" id="products-grid-container"></div>
+  </section>
+
+  <!-- SERVIÇOS VARIADOS COM ABAS -->
+  <section class="varied-services-section" id="servicos-variados">
+    <div class="section-header">
+      <h2>Serviços <span>Variados</span></h2>
+      <p>Monte o pacote ideal e faça exatamente o que seu carro precisa</p>
+    </div>
+
+    <!-- ABAS DE NAVEGAÇÃO DE SERVIÇOS -->
+    <div class="tabs-container">
+      <button class="service-tab-btn active" data-service-filter="all">Todos os Serviços</button>
+      <button class="service-tab-btn" data-service-filter="mecanica">Mecânica & Suspensão</button>
+      <button class="service-tab-btn" data-service-filter="estetica">Estética & Películas</button>
+      <button class="service-tab-btn" data-service-filter="interna">Personalização Interna</button>
+      <button class="service-tab-btn" data-service-filter="eletronica">Eletrônica & Som</button>
+    </div>
+
+    <div class="services-selection-grid" id="services-grid-container"></div>
+
+    <!-- BARRA RESUMO DE SERVIÇOS SELECIONADOS -->
+    <div class="selected-services-summary">
+      <div class="summary-info">
+        <span>Serviços Selecionados: <strong id="selected-services-count">0</strong></span>
+        <span class="estimate-text">Valor Estimado: <strong id="selected-services-total">R$ 0,00</strong></span>
+      </div>
+      <button class="btn-main" id="send-services-whatsapp"><i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento no WhatsApp</button>
+    </div>
   </section>
 
   <!-- OFICINA & AGENDAMENTO -->
@@ -87,7 +156,7 @@
     <div class="workshop-wrapper">
       <div class="section-header">
         <h2>Agendamento de <span>Oficina</span></h2>
-        <p>Garantia de serviço especializado com alinhamento 3D, som, películas e revisões.</p>
+        <p>Atendimento prioritário para instalação, revisão ou personalização completa.</p>
       </div>
       <form id="schedule-form" class="workshop-form">
         <div class="form-group">
@@ -99,16 +168,16 @@
           <input type="text" id="client-car" required placeholder="Ex: VW Jetta GLI 2023">
         </div>
         <div class="form-group">
-          <label>Serviço Desejado</label>
+          <label>Serviço Principal</label>
           <select id="client-service">
+            <option>Personalização Interna Completa (Couro / LED)</option>
+            <option>Instalação de Rodas & Suspensão</option>
             <option>Aplicação de Insulfilm Nanocerâmico</option>
-            <option>Instalação de Rodas & Pneus</option>
-            <option>Personalização Interna & Capas Sob Medida</option>
-            <option>Central Multimídia & Iluminação LED</option>
-            <option>Revisão de Oficina / Suspensão</option>
+            <option>Instalação de Multimídia & Som</option>
+            <option>Pacote de Serviços Variados</option>
           </select>
         </div>
-        <button type="submit" class="btn-main submit-btn"><i class="fa-brands fa-whatsapp"></i> Enviar Agendamento via WhatsApp</button>
+        <button type="submit" class="btn-main submit-btn"><i class="fa-brands fa-whatsapp"></i> Confirmar Agendamento via WhatsApp</button>
       </form>
     </div>
   </section>
@@ -117,7 +186,7 @@
   <div class="drawer-overlay" id="drawer-overlay"></div>
   <div class="cart-drawer" id="cart-drawer">
     <div class="cart-header">
-      <h3>Carrinho de Pedidos</h3>
+      <h3>Carrinho de Compras</h3>
       <button id="close-cart" class="close-cart-btn">&times;</button>
     </div>
     <div class="cart-body" id="cart-items-container"></div>
@@ -139,13 +208,13 @@
   </div>
 
   <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <a href="https://wa.me/5541999999999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20produtos%20da%20Drive%20Zone." target="_blank" class="whatsapp-float" aria-label="Contacto WhatsApp">
+  <a href="https://wa.me/5541999999999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20produtos%20da%20Drive%20Zone." target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- RODAPÉ -->
   <footer>
-    <img src="127181_2.jpg" alt="Logótipo Drive Zone" class="footer-logo" onerror="this.style.display='none'">
+    <img src="127181_2.jpg" alt="Logo Drive Zone" class="footer-logo" onerror="this.style.display='none'">
     <p>&copy; 2026 Drive Zone. Todos os direitos reservados. "Seu carro, seu estilo."</p>
   </footer>
 
