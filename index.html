@@ -3,129 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DRIVE ZONE: acessórios automotivos, personalização e produtos para seu carro.">
-  <title>DRIVE ZONE | Acessórios Automotivos</title>
+  <meta name="description" content="DRIVE ZONE — acessórios automotivos, tecnologia e personalização para seu carro.">
+  <title>DRIVE ZONE — Automotive Lifestyle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="announcement">DRIVE ZONE <span>•</span> ACESSÓRIOS QUE DEFINEM SEU ESTILO</div>
 
   <header class="header">
-    <a href="#" class="logo">DRIVE<span>ZONE</span><small>ACESSÓRIOS AUTOMOTIVOS</small></a>
+    <a href="#inicio" class="brand">
+      <span class="brand-mark">D<span>Z</span></span>
+      <span class="brand-name">DRIVE <b>ZONE</b><small>AUTOMOTIVE LIFESTYLE</small></span>
+    </a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
 
     <nav class="nav" id="nav">
       <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
+      <a href="#colecao">Coleção</a>
       <a href="#categorias">Categorias</a>
-      <a href="#sobre">Sobre nós</a>
-      <a href="#contato" class="nav-button">Contato</a>
+      <a href="#sobre">A marca</a>
+      <a href="#contato">Contato</a>
     </nav>
+
+    <button class="cart-trigger" id="openCart" aria-label="Abrir carrinho">
+      <span class="cart-icon">♧</span> Sacola <span class="cart-count" id="cartCount">0</span>
+    </button>
   </header>
 
   <main>
     <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
       <div class="hero-content">
-        <span class="eyebrow">SEU CARRO. SEU ESTILO.</span>
-        <h1>Personalize.<br><span>Destaque-se.</span></h1>
-        <p>Encontre acessórios e produtos automotivos para transformar cada detalhe do seu carro.</p>
-        <a href="#produtos" class="button">EXPLORAR PRODUTOS <span>→</span></a>
-      </div>
-      <div class="hero-label">
-        <span class="hero-line"></span>
-        <span>ACESSÓRIOS QUE FAZEM A DIFERENÇA</span>
-      </div>
-    </section>
-
-    <section class="benefits">
-      <div><span>01</span><p>Estilo e personalização</p></div>
-      <div><span>02</span><p>Produtos para seu veículo</p></div>
-      <div><span>03</span><p>Mais praticidade no dia a dia</p></div>
-    </section>
-
-    <section class="section categories" id="categorias">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">ENCONTRE O QUE PRECISA</span>
-          <h2>Explore as <span>categorias</span></h2>
+        <span class="eyebrow"><i></i> AUTOMOTIVE ACCESSORIES</span>
+        <h1>O extraordinário<br>está nos <span>detalhes.</span></h1>
+        <p>Uma seleção de acessórios para transformar o interior, elevar o estilo e trazer mais personalidade para o seu carro.</p>
+        <div class="hero-actions">
+          <a href="#colecao" class="btn btn-red">EXPLORAR COLEÇÃO <span>↗</span></a>
+          <a href="#categorias" class="text-link">Descubra as categorias <span>→</span></a>
         </div>
       </div>
-
-      <div class="category-list">
-        <button class="category active" data-category="Todos">Todos os produtos</button>
-        <button class="category" data-category="Interior">Acessórios internos</button>
-        <button class="category" data-category="Iluminação">Som e iluminação</button>
-        <button class="category" data-category="Exterior">Personalização externa</button>
-        <button class="category" data-category="Limpeza">Limpeza e conservação</button>
-        <button class="category" data-category="Tecnologia">Tecnologia e utilidades</button>
+      <div class="hero-bottom">
+        <span>01 / PERSONALIZE SEU UNIVERSO</span>
+        <span>ESTILO • FUNÇÃO • IDENTIDADE</span>
       </div>
     </section>
 
-    <section class="section products-section" id="produtos">
+    <section class="trust-strip">
+      <div><span class="trust-symbol">✳</span><div><b>Curadoria automotiva</b><small>Produtos selecionados</small></div></div>
+      <div><span class="trust-symbol">◇</span><div><b>Compra descomplicada</b><small>Pedido em poucos passos</small></div></div>
+      <div><span class="trust-symbol">↗</span><div><b>Atendimento próximo</b><small>Fale com nossa equipe</small></div></div>
+    </section>
+
+    <section class="section category-section" id="categorias">
       <div class="section-heading">
-        <div>
-          <span class="eyebrow">NOSSO CATÁLOGO</span>
-          <h2>Produtos em <span>destaque</span></h2>
-          <p class="section-description">Detalhes que deixam seu carro com a sua personalidade.</p>
-        </div>
-        <span class="product-count" id="productCount">12 produtos</span>
+        <div><span class="eyebrow">EXPLORE POR ESTILO</span><h2>Encontre a sua <span>categoria.</span></h2></div>
+        <p>Funcionalidade, conforto e personalidade em cada escolha.</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" data-category="Interior">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85" alt="Interior automotivo">
+          <span class="category-overlay"></span><span class="category-content"><small>01 / CONFORTO</small><b>Interior</b><span>Explorar coleção ↗</span></span>
+        </button>
+        <button class="category-card" data-category="Exterior">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=85" alt="Detalhes externos automotivos">
+          <span class="category-overlay"></span><span class="category-content"><small>02 / PRESENÇA</small><b>Exterior</b><span>Explorar coleção ↗</span></span>
+        </button>
+        <button class="category-card" data-category="Tecnologia">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=85" alt="Tecnologia e acessórios">
+          <span class="category-overlay"></span><span class="category-content"><small>03 / INOVAÇÃO</small><b>Tecnologia</b><span>Explorar coleção ↗</span></span>
+        </button>
+        <button class="category-card" data-category="Limpeza">
+          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=85" alt="Cuidados automotivos">
+          <span class="category-overlay"></span><span class="category-content"><small>04 / CUIDADO</small><b>Estética & cuidado</b><span>Explorar coleção ↗</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section collection-section" id="colecao">
+      <div class="section-heading collection-heading">
+        <div><span class="eyebrow">A SELEÇÃO DRIVE ZONE</span><h2>Peças que fazem <span>sentido.</span></h2><p>Descubra acessórios para os detalhes que você mais valoriza.</p></div>
+        <span class="collection-note">CURADORIA Nº 001 — 2026</span>
       </div>
 
-      <div class="search-bar">
-        <span>⌕</span>
-        <input type="search" id="searchInput" placeholder="Buscar acessórios, produtos..." aria-label="Buscar produtos">
+      <div class="shop-toolbar">
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Todos">Todos</button>
+          <button class="filter" data-category="Interior">Interior</button>
+          <button class="filter" data-category="Exterior">Exterior</button>
+          <button class="filter" data-category="Tecnologia">Tecnologia</button>
+          <button class="filter" data-category="Iluminação">Iluminação</button>
+          <button class="filter" data-category="Limpeza">Limpeza</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"></label>
       </div>
 
       <div class="product-grid" id="productGrid"></div>
-      <p class="empty-message" id="emptyMessage" hidden>Nenhum produto encontrado. Tente outra busca.</p>
+      <div class="empty-state" id="emptyMessage" hidden>Não encontramos produtos com essa busca. Tente outro termo.</div>
+      <div class="catalog-footer"><span id="productCount">12 produtos</span><span>PREÇOS DEMONSTRATIVOS • CONFIRME DISPONIBILIDADE</span></div>
     </section>
 
-    <section class="custom-banner">
-      <div>
-        <span class="eyebrow">SEU ESTILO COMEÇA NOS DETALHES</span>
-        <h2>Seu carro, suas escolhas.</h2>
-        <p>Descubra acessórios para deixar seu veículo mais funcional e com a sua identidade.</p>
+    <section class="editorial">
+      <div class="editorial-image"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=85" alt="Detalhes e design automotivo" loading="lazy"></div>
+      <div class="editorial-copy"><span class="eyebrow">NOSSA FILOSOFIA</span><h2>Não é só sobre o carro.<br>É sobre <span>como ele representa você.</span></h2><p>A DRIVE ZONE nasceu da paixão pelos detalhes. Reunimos acessórios que unem estética, praticidade e personalidade para quem acredita que cada escolha faz diferença.</p><a class="text-link dark-link" href="#sobre">Conheça a nossa essência <span>↗</span></a></div>
+    </section>
+
+    <section class="service-strip">
+      <div><span>01</span><b>Escolha seus produtos</b><p>Explore as categorias e monte sua seleção.</p></div>
+      <div><span>02</span><b>Revise sua sacola</b><p>Confira quantidades e valores antes de pedir.</p></div>
+      <div><span>03</span><b>Envie seu pedido</b><p>Entre em contato para confirmar os detalhes.</p></div>
+    </section>
+
+    <section class="about-section section" id="sobre">
+      <span class="eyebrow">DRIVE ZONE / SOBRE A MARCA</span>
+      <h2>Estilo com intenção.<br><span>Detalhes com personalidade.</span></h2>
+      <p>Somos uma loja focada em acessórios e produtos automotivos. Nosso propósito é oferecer uma experiência de compra clara, moderna e voltada a quem deseja personalizar e cuidar do próprio veículo.</p>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="contact-intro"><span class="eyebrow">ESTAMOS AQUI PARA AJUDAR</span><h2>Vamos conversar<br>sobre o seu próximo <span>acessório?</span></h2><p>Dúvidas sobre produtos, compatibilidade ou pedidos? Escolha o canal que preferir ou envie sua mensagem.</p>
+        <div class="contact-links">
+          <a href="mailto:contato@drivezone.com.br"><span class="contact-icon">✉</span><span><small>E-MAIL</small><b>contato@drivezone.com.br</b></span><span>↗</span></a>
+          <a href="#" id="whatsappContact" target="_blank" rel="noopener"><span class="contact-icon">◉</span><span><small>WHATSAPP</small><b>Fale com a nossa equipe</b></span><span>↗</span></a>
+        </div>
       </div>
-      <a href="#produtos" class="button button-light">VER CATÁLOGO →</a>
-    </section>
-
-    <section class="section about" id="sobre">
-      <span class="eyebrow">QUEM SOMOS</span>
-      <h2>Mais que acessórios.<br><span>Uma questão de estilo.</span></h2>
-      <p>A DRIVE ZONE é uma loja dedicada a acessórios e produtos automotivos. Nosso objetivo é reunir opções para personalizar o interior, valorizar o exterior e trazer mais praticidade para o seu dia a dia.</p>
-    </section>
-
-    <section class="contact" id="contato">
-      <div>
-        <span class="eyebrow">FALE COM A GENTE</span>
-        <h2>Vamos encontrar seu próximo acessório?</h2>
-        <p>Entre em contato para consultar disponibilidade, compatibilidade e informações sobre os produtos.</p>
-      </div>
-      <a class="button" href="mailto:contato@drivezone.com.br">ENTRAR EM CONTATO →</a>
+      <form class="contact-form" id="contactForm">
+        <h3>Envie uma mensagem</h3>
+        <p>Preencha os campos e prepare sua mensagem para nosso atendimento.</p>
+        <label>Seu nome<input name="name" required placeholder="Como podemos chamar você?"></label>
+        <label>Seu e-mail<input name="email" type="email" required placeholder="voce@email.com"></label>
+        <label>Assunto<select name="subject"><option>Dúvida sobre produto</option><option>Compatibilidade</option><option>Acompanhar pedido</option><option>Parceria comercial</option><option>Outro assunto</option></select></label>
+        <label>Mensagem<textarea name="message" required rows="4" placeholder="Conte como podemos ajudar..."></textarea></label>
+        <button class="btn btn-red full-btn" type="submit">PREPARAR MENSAGEM ↗</button>
+        <small class="form-note">Seu aplicativo de e-mail será aberto para enviar a mensagem.</small>
+      </form>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="#inicio" class="logo">DRIVE<span>ZONE</span><small>ACESSÓRIOS AUTOMOTIVOS</small></a>
-    <p>© 2026 DRIVE ZONE. Todos os direitos reservados.</p>
-    <a href="#inicio">Voltar ao topo ↑</a>
+    <a href="#inicio" class="brand"><span class="brand-mark">D<span>Z</span></span><span class="brand-name">DRIVE <b>ZONE</b><small>AUTOMOTIVE LIFESTYLE</small></span></a>
+    <p>Personalidade em cada detalhe.</p>
+    <div class="footer-links"><a href="#colecao">Produtos</a><a href="#contato">Contato</a><a href="mailto:contato@drivezone.com.br">E-mail</a></div>
+    <small>© 2026 DRIVE ZONE. Projeto de loja virtual.</small>
   </footer>
 
-  <div class="modal" id="productModal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
-      <img id="modalImage" src="" alt="">
-      <div class="modal-info">
-        <span class="eyebrow" id="modalCategory"></span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-        <strong class="modal-price" id="modalPrice"></strong>
-        <p class="compatibility-note">Confira a compatibilidade com seu veículo antes da compra.</p>
-        <a href="#contato" class="button" id="modalContact">CONSULTAR PRODUTO →</a>
-      </div>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="cart-header"><div><span class="eyebrow">SUA SELEÇÃO</span><h2>Sacola <span id="cartTitleCount">(0)</span></h2></div><button id="closeCart" class="close-button" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>◇</span><h3>Sua sacola está vazia.</h3><p>Explore nossa coleção e encontre seus próximos acessórios.</p><button class="btn btn-dark" id="continueShopping">EXPLORAR PRODUTOS</button></div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="subtotal"><span>Subtotal</span><b id="cartSubtotal">R$ 0,00</b></div>
+      <p>Frete e disponibilidade serão confirmados no atendimento.</p>
+      <button class="btn btn-red full-btn" id="checkoutButton">CONTINUAR COM O PEDIDO ↗</button>
+      <small>Você revisará seus dados antes de enviar o pedido.</small>
+    </div>
+  </aside>
+
+  <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+    <div class="checkout-card">
+      <button class="close-button checkout-close" id="closeCheckout" aria-label="Fechar">×</button>
+      <span class="eyebrow">ÚLTIMA ETAPA</span>
+      <h2>Seus dados para o <span>pedido.</span></h2>
+      <p>Preencha seus dados. O pedido será preparado para envio por WhatsApp ou e-mail. O pagamento ainda será combinado com a loja.</p>
+      <form id="checkoutForm">
+        <label>Nome completo<input name="customerName" required autocomplete="name" placeholder="Seu nome"></label>
+        <label>E-mail<input name="customerEmail" type="email" required autocomplete="email" placeholder="voce@email.com"></label>
+        <label>Telefone<input name="customerPhone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
+        <label>Cidade e estado<input name="customerCity" required autocomplete="address-level2" placeholder="Cidade - UF"></label>
+        <label>Forma de contato preferida<select name="contactMethod"><option value="WhatsApp">WhatsApp</option><option value="E-mail">E-mail</option></select></label>
+        <label>Observações (opcional)<textarea name="notes" rows="2" placeholder="Compatibilidade, entrega ou dúvidas"></textarea></label>
+        <div class="checkout-total"><span>Subtotal demonstrativo</span><b id="checkoutTotal">R$ 0,00</b></div>
+        <button class="btn btn-red full-btn" type="submit">PREPARAR MEU PEDIDO ↗</button>
+        <small class="form-note">Este site é uma demonstração: não cobra pagamentos nem confirma estoque ou frete.</small>
+      </form>
     </div>
   </div>
 
+  <div class="toast" id="toast" role="status"></div>
   <script src="script.js"></script>
 </body>
 </html>
