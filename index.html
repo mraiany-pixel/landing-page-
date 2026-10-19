@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DRIVE ZONE — acessórios automotivos para personalizar seu estilo ao volante.">
-<title>DRIVE ZONE | Acessórios automotivos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DRIVE ZONE: acessórios automotivos, personalização e produtos para seu carro.">
+  <title>DRIVE ZONE | Acessórios Automotivos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="announcement">ESTILO, CONFORTO E PERSONALIDADE PARA O SEU CARRO <span>•</span> DRIVE ZONE</div>
-<header class="site-header" id="inicio">
-  <a class="brand" href="#inicio" aria-label="Drive Zone início"><span class="brand-symbol">D<span>Z</span></span><span class="brand-text">DRIVE <b>ZONE</b><small>ACESSÓRIOS AUTOMOTIVOS</small></span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-  <nav class="nav" id="nav"><a class="active" href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a></nav>
-  <a class="header-button" href="#produtos">Explorar loja <span>↗</span></a>
-</header>
-<main>
-<section class="hero">
-  <div class="hero-image" role="img" aria-label="Interior elegante de automóvel"></div><div class="hero-overlay"></div>
-  <div class="hero-content"><p class="eyebrow"><span></span> SEU CARRO. SUA IDENTIDADE.</p><h1>Detalhes que<br>fazem a <em>diferença.</em></h1>
-  <p class="hero-description">Acessórios automotivos selecionados para elevar o conforto, o visual e a personalidade de cada viagem.</p>
-  <div class="hero-actions"><a class="button button-primary" href="#categorias">Descobrir categorias <span>→</span></a><a class="button button-quiet" href="#sobre">Conheça a Drive Zone</a></div>
-  <div class="hero-note"><span class="note-line"></span><span>DESIGN • FUNCIONALIDADE • ESTILO</span></div></div><div class="hero-index">DRIVE ZONE <b>— 01</b></div>
-</section>
-<section class="trust-strip"><div><span class="trust-icon">✳</span><span><strong>Estilo em cada detalhe</strong><small>Acessórios para valorizar seu carro</small></span></div><div><span class="trust-icon">◇</span><span><strong>Escolha com praticidade</strong><small>Categorias organizadas para você</small></span></div><div><span class="trust-icon">↗</span><span><strong>Seu carro, seu jeito</strong><small>Personalidade em cada caminho</small></span></div></section>
-<section class="section" id="categorias">
-  <div class="section-heading"><div><p class="eyebrow">EXPLORE A LOJA</p><h2>Encontre o que combina<br><em>com você.</em></h2></div><p class="heading-copy">Do interior aos detalhes externos, descubra opções para deixar seu carro mais funcional e com a sua personalidade.</p></div>
-  <div class="category-grid">
-    <a href="#produtos" class="category-card category-interior" data-category-link="Acessórios internos"><span class="category-number">01 / INTERIOR</span><span class="category-content"><strong>Acessórios internos</strong><small>Conforto que acompanha você</small><b>Explorar categoria</b></span></a>
-    <a href="#produtos" class="category-card category-audio" data-category-link="Som e iluminação"><span class="category-number">02 / EXPERIÊNCIA</span><span class="category-content"><strong>Som e iluminação</strong><small>Mais atmosfera ao dirigir</small><b>Explorar categoria</b></span></a>
-    <a href="#produtos" class="category-card category-exterior" data-category-link="Acessórios externos"><span class="category-number">03 / VISUAL</span><span class="category-content"><strong>Acessórios externos</strong><small>Presença por todos os ângulos</small><b>Explorar categoria</b></span></a>
-    <a href="#produtos" class="category-card category-mats" data-category-link="Tapetes e capas"><span class="category-number">04 / PROTEÇÃO</span><span class="category-content"><strong>Tapetes e capas</strong><small>Cuidado com estilo</small><b>Explorar categoria</b></span></a>
-    <a href="#produtos" class="category-card category-custom" data-category-link="Personalização automotiva"><span class="category-number">05 / PERSONALIDADE</span><span class="category-content"><strong>Personalização automotiva</strong><small>Detalhes que são a sua cara</small><b>Explorar categoria</b></span></a>
+
+  <header class="header">
+    <a href="#" class="logo">DRIVE<span>ZONE</span><small>ACESSÓRIOS AUTOMOTIVOS</small></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato" class="nav-button">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">SEU CARRO. SEU ESTILO.</span>
+        <h1>Personalize.<br><span>Destaque-se.</span></h1>
+        <p>Encontre acessórios e produtos automotivos para transformar cada detalhe do seu carro.</p>
+        <a href="#produtos" class="button">EXPLORAR PRODUTOS <span>→</span></a>
+      </div>
+      <div class="hero-label">
+        <span class="hero-line"></span>
+        <span>ACESSÓRIOS QUE FAZEM A DIFERENÇA</span>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><span>01</span><p>Estilo e personalização</p></div>
+      <div><span>02</span><p>Produtos para seu veículo</p></div>
+      <div><span>03</span><p>Mais praticidade no dia a dia</p></div>
+    </section>
+
+    <section class="section categories" id="categorias">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ENCONTRE O QUE PRECISA</span>
+          <h2>Explore as <span>categorias</span></h2>
+        </div>
+      </div>
+
+      <div class="category-list">
+        <button class="category active" data-category="Todos">Todos os produtos</button>
+        <button class="category" data-category="Interior">Acessórios internos</button>
+        <button class="category" data-category="Iluminação">Som e iluminação</button>
+        <button class="category" data-category="Exterior">Personalização externa</button>
+        <button class="category" data-category="Limpeza">Limpeza e conservação</button>
+        <button class="category" data-category="Tecnologia">Tecnologia e utilidades</button>
+      </div>
+    </section>
+
+    <section class="section products-section" id="produtos">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">NOSSO CATÁLOGO</span>
+          <h2>Produtos em <span>destaque</span></h2>
+          <p class="section-description">Detalhes que deixam seu carro com a sua personalidade.</p>
+        </div>
+        <span class="product-count" id="productCount">12 produtos</span>
+      </div>
+
+      <div class="search-bar">
+        <span>⌕</span>
+        <input type="search" id="searchInput" placeholder="Buscar acessórios, produtos..." aria-label="Buscar produtos">
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>Nenhum produto encontrado. Tente outra busca.</p>
+    </section>
+
+    <section class="custom-banner">
+      <div>
+        <span class="eyebrow">SEU ESTILO COMEÇA NOS DETALHES</span>
+        <h2>Seu carro, suas escolhas.</h2>
+        <p>Descubra acessórios para deixar seu veículo mais funcional e com a sua identidade.</p>
+      </div>
+      <a href="#produtos" class="button button-light">VER CATÁLOGO →</a>
+    </section>
+
+    <section class="section about" id="sobre">
+      <span class="eyebrow">QUEM SOMOS</span>
+      <h2>Mais que acessórios.<br><span>Uma questão de estilo.</span></h2>
+      <p>A DRIVE ZONE é uma loja dedicada a acessórios e produtos automotivos. Nosso objetivo é reunir opções para personalizar o interior, valorizar o exterior e trazer mais praticidade para o seu dia a dia.</p>
+    </section>
+
+    <section class="contact" id="contato">
+      <div>
+        <span class="eyebrow">FALE COM A GENTE</span>
+        <h2>Vamos encontrar seu próximo acessório?</h2>
+        <p>Entre em contato para consultar disponibilidade, compatibilidade e informações sobre os produtos.</p>
+      </div>
+      <a class="button" href="mailto:contato@drivezone.com.br">ENTRAR EM CONTATO →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#inicio" class="logo">DRIVE<span>ZONE</span><small>ACESSÓRIOS AUTOMOTIVOS</small></a>
+    <p>© 2026 DRIVE ZONE. Todos os direitos reservados.</p>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-info">
+        <span class="eyebrow" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <strong class="modal-price" id="modalPrice"></strong>
+        <p class="compatibility-note">Confira a compatibilidade com seu veículo antes da compra.</p>
+        <a href="#contato" class="button" id="modalContact">CONSULTAR PRODUTO →</a>
+      </div>
+    </div>
   </div>
-</section>
-<section class="section products-section" id="produtos">
-  <div class="section-heading"><div><p class="eyebrow">SELEÇÃO DRIVE ZONE</p><h2>Peças que completam<br><em>o seu estilo.</em></h2></div><p class="heading-copy">Explore algumas ideias para o seu próximo upgrade automotivo.</p></div>
-  <div class="product-toolbar"><div class="filter-list" id="filterList" aria-label="Filtrar produtos">
-    <button class="filter active" data-filter="Todos">Todos</button><button class="filter" data-filter="Acessórios internos">Internos</button><button class="filter" data-filter="Som e iluminação">Som & iluminação</button><button class="filter" data-filter="Tapetes e capas">Tapetes & capas</button><button class="filter" data-filter="Acessórios externos">Externos</button><button class="filter" data-filter="Personalização automotiva">Personalização</button>
-  </div><label class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="Buscar acessório..." aria-label="Buscar acessório"></label></div>
-  <div class="product-grid" id="productGrid">
-    <article class="product-card" data-category="Acessórios internos" data-name="Organizador de console"><div class="product-photo photo-console"><span class="product-tag">DIA A DIA</span><button class="quick-view" data-product="Organizador de console" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">ACESSÓRIOS INTERNOS</p><h3>Organizador de console</h3><p>Mais praticidade para manter seus itens essenciais no lugar.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Organizador de console">Ver detalhes <span>→</span></button></div></div></article>
-    <article class="product-card" data-category="Som e iluminação" data-name="Iluminação ambiente LED"><div class="product-photo photo-led"><span class="product-tag">PERSONALIZE</span><button class="quick-view" data-product="Iluminação ambiente LED" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">SOM E ILUMINAÇÃO</p><h3>Iluminação ambiente LED</h3><p>Uma atmosfera moderna para valorizar o interior do veículo.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Iluminação ambiente LED">Ver detalhes <span>→</span></button></div></div></article>
-    <article class="product-card" data-category="Tapetes e capas" data-name="Tapete automotivo"><div class="product-photo photo-mat"><span class="product-tag">CUIDADO</span><button class="quick-view" data-product="Tapete automotivo" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">TAPETES E CAPAS</p><h3>Tapete automotivo</h3><p>Uma opção prática para ajudar a proteger o interior do carro.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Tapete automotivo">Ver detalhes <span>→</span></button></div></div></article>
-    <article class="product-card" data-category="Acessórios externos" data-name="Detalhes externos"><div class="product-photo photo-exterior"><span class="product-tag">VISUAL</span><button class="quick-view" data-product="Detalhes externos" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">ACESSÓRIOS EXTERNOS</p><h3>Detalhes externos</h3><p>Pequenos detalhes para dar mais personalidade ao visual.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Detalhes externos">Ver detalhes <span>→</span></button></div></div></article>
-    <article class="product-card" data-category="Personalização automotiva" data-name="Kit de personalização"><div class="product-photo photo-custom"><span class="product-tag">SEU ESTILO</span><button class="quick-view" data-product="Kit de personalização" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">PERSONALIZAÇÃO</p><h3>Kit de personalização</h3><p>Toques visuais para deixar o veículo com a sua identidade.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Kit de personalização">Ver detalhes <span>→</span></button></div></div></article>
-    <article class="product-card" data-category="Som e iluminação" data-name="Acessório de áudio"><div class="product-photo photo-audio"><span class="product-tag">IMERSÃO</span><button class="quick-view" data-product="Acessório de áudio" aria-label="Ver detalhes">↗</button></div><div class="product-info"><p class="product-category">SOM E ILUMINAÇÃO</p><h3>Acessório de áudio</h3><p>Opções para complementar a experiência sonora no seu carro.</p><div class="product-bottom"><span class="price">Consulte o preço</span><button class="product-action" data-product="Acessório de áudio">Ver detalhes <span>→</span></button></div></div></article>
-  </div><p class="empty-state" id="emptyState" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p><p class="catalog-note">Produtos ilustrativos. Confirme disponibilidade, compatibilidade e valores com a loja.</p>
-</section>
-<section class="brand-story" id="sobre"><div class="story-image" role="img" aria-label="Detalhe de automóvel"></div><div class="story-content"><p class="eyebrow">SOBRE A DRIVE ZONE</p><h2>Seu carro também<br>conta a sua <em>história.</em></h2><p>Acreditamos que são os detalhes que transformam a experiência ao volante. A DRIVE ZONE reúne acessórios para quem busca praticidade, estilo e formas de deixar cada viagem mais pessoal.</p><a class="button button-primary" href="#contato">Fale com a gente <span>→</span></a></div></section>
-<section class="section contact-section" id="contato"><div><p class="eyebrow">VAMOS DAR O PRÓXIMO PASSO?</p><h2>Encontre o detalhe<br>que faltava no <em>seu carro.</em></h2><p>Fale com a nossa equipe para consultar produtos, preços e compatibilidade com seu veículo.</p></div><a class="button button-primary" id="contactButton" href="mailto:contato@drivezone.com.br?subject=Consulta%20de%20acess%C3%B3rios">Consultar acessórios <span>↗</span></a></section>
-</main>
-<footer class="footer"><a class="brand" href="#inicio"><span class="brand-symbol">D<span>Z</span></span><span class="brand-text">DRIVE <b>ZONE</b><small>ACESSÓRIOS AUTOMOTIVOS</small></span></a><p>© <span id="year"></span> DRIVE ZONE. Todos os direitos reservados.</p><a href="#inicio" class="back-top">VOLTAR AO TOPO ↑</a></footer>
-<div class="modal" id="productModal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fechar janela">×</button><p class="eyebrow">DETALHES DO PRODUTO</p><h2 id="modalTitle">Produto</h2><p id="modalDescription">Consulte a loja para saber mais sobre este acessório.</p><p class="modal-price">Valor e disponibilidade sob consulta</p><a class="button button-primary" id="modalContact" href="#contato">Consultar na loja <span>→</span></a></div></div>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
