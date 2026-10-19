@@ -3,187 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DRIVE ZONE — acessórios automotivos, tecnologia e personalização para seu carro.">
-  <title>DRIVE ZONE — Automotive Lifestyle</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Drive Zone | Seu carro, seu estilo</title>
+  
+  <!-- Font Awesome para Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tipografia Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Estilo CSS Externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="announcement">DRIVE ZONE <span>•</span> ACESSÓRIOS QUE DEFINEM SEU ESTILO</div>
 
-  <header class="header">
-    <a href="#inicio" class="brand">
-      <span class="brand-mark">D<span>Z</span></span>
-      <span class="brand-name">DRIVE <b>ZONE</b><small>AUTOMOTIVE LIFESTYLE</small></span>
-    </a>
+  <!-- BARRA DE AVISOS -->
+  <div class="top-bar">
+    <div><i class="fa-solid fa-location-dot highlight"></i> Atendimento & Oficina Especializada</div>
+    <div><i class="fa-solid fa-shield-halved highlight"></i> Garantia do Fabricante + Instalação Certificada</div>
+    <div><i class="fa-brands fa-whatsapp highlight"></i> (41) 99999-9999</div>
+  </div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo-container">
+        <img src="127181.jpg" alt="Drive Zone Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+        <div id="alt-logo" style="display:none; font-family: 'Orbitron'; font-size: 1.5rem; font-weight: 900; color: #fff;">
+          DRIVE <span style="color: var(--red-primary);">ZONE</span>
+        </div>
+      </a>
 
-    <nav class="nav" id="nav">
-      <a href="#inicio">Início</a>
-      <a href="#colecao">Coleção</a>
-      <a href="#categorias">Categorias</a>
-      <a href="#sobre">A marca</a>
-      <a href="#contato">Contato</a>
-    </nav>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#calculadora">Películas</a></li>
+          <li><a href="#oficina">Oficina & Agendamento</a></li>
+          <li><a href="#qualidade">Qualidade</a></li>
+        </ul>
+      </nav>
 
-    <button class="cart-trigger" id="openCart" aria-label="Abrir carrinho">
-      <span class="cart-icon">♧</span> Sacola <span class="cart-count" id="cartCount">0</span>
-    </button>
+      <div class="header-actions">
+        <button class="cart-btn" id="cart-toggle-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <a href="#oficina" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Agendar</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <span class="eyebrow"><i></i> AUTOMOTIVE ACCESSORIES</span>
-        <h1>O extraordinário<br>está nos <span>detalhes.</span></h1>
-        <p>Uma seleção de acessórios para transformar o interior, elevar o estilo e trazer mais personalidade para o seu carro.</p>
-        <div class="hero-actions">
-          <a href="#colecao" class="btn btn-red">EXPLORAR COLEÇÃO <span>↗</span></a>
-          <a href="#categorias" class="text-link">Descubra as categorias <span>→</span></a>
-        </div>
+  <!-- BANNER PRINCIPAL -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Performance & Customização</span>
+      <h1 class="hero-title">Acessórios & <span>Oficina</span></h1>
+      <p class="hero-slogan">"Deixe seu carro a sua cara na Drive Zone, seu carro, seu estilo."</p>
+      <div class="hero-buttons">
+        <a href="#produtos" class="btn-primary"><i class="fa-solid fa-shop"></i> Ver Catálogo Completo</a>
+        <a href="#calculadora" class="btn-primary btn-outline"><i class="fa-solid fa-calculator"></i> Simular Película</a>
       </div>
-      <div class="hero-bottom">
-        <span>01 / PERSONALIZE SEU UNIVERSO</span>
-        <span>ESTILO • FUNÇÃO • IDENTIDADE</span>
-      </div>
-    </section>
-
-    <section class="trust-strip">
-      <div><span class="trust-symbol">✳</span><div><b>Curadoria automotiva</b><small>Produtos selecionados</small></div></div>
-      <div><span class="trust-symbol">◇</span><div><b>Compra descomplicada</b><small>Pedido em poucos passos</small></div></div>
-      <div><span class="trust-symbol">↗</span><div><b>Atendimento próximo</b><small>Fale com nossa equipe</small></div></div>
-    </section>
-
-    <section class="section category-section" id="categorias">
-      <div class="section-heading">
-        <div><span class="eyebrow">EXPLORE POR ESTILO</span><h2>Encontre a sua <span>categoria.</span></h2></div>
-        <p>Funcionalidade, conforto e personalidade em cada escolha.</p>
-      </div>
-      <div class="category-grid">
-        <button class="category-card" data-category="Interior">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85" alt="Interior automotivo">
-          <span class="category-overlay"></span><span class="category-content"><small>01 / CONFORTO</small><b>Interior</b><span>Explorar coleção ↗</span></span>
-        </button>
-        <button class="category-card" data-category="Exterior">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=85" alt="Detalhes externos automotivos">
-          <span class="category-overlay"></span><span class="category-content"><small>02 / PRESENÇA</small><b>Exterior</b><span>Explorar coleção ↗</span></span>
-        </button>
-        <button class="category-card" data-category="Tecnologia">
-          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=85" alt="Tecnologia e acessórios">
-          <span class="category-overlay"></span><span class="category-content"><small>03 / INOVAÇÃO</small><b>Tecnologia</b><span>Explorar coleção ↗</span></span>
-        </button>
-        <button class="category-card" data-category="Limpeza">
-          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=85" alt="Cuidados automotivos">
-          <span class="category-overlay"></span><span class="category-content"><small>04 / CUIDADO</small><b>Estética & cuidado</b><span>Explorar coleção ↗</span></span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section collection-section" id="colecao">
-      <div class="section-heading collection-heading">
-        <div><span class="eyebrow">A SELEÇÃO DRIVE ZONE</span><h2>Peças que fazem <span>sentido.</span></h2><p>Descubra acessórios para os detalhes que você mais valoriza.</p></div>
-        <span class="collection-note">CURADORIA Nº 001 — 2026</span>
-      </div>
-
-      <div class="shop-toolbar">
-        <div class="filters" id="filters">
-          <button class="filter active" data-category="Todos">Todos</button>
-          <button class="filter" data-category="Interior">Interior</button>
-          <button class="filter" data-category="Exterior">Exterior</button>
-          <button class="filter" data-category="Tecnologia">Tecnologia</button>
-          <button class="filter" data-category="Iluminação">Iluminação</button>
-          <button class="filter" data-category="Limpeza">Limpeza</button>
-        </div>
-        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"></label>
-      </div>
-
-      <div class="product-grid" id="productGrid"></div>
-      <div class="empty-state" id="emptyMessage" hidden>Não encontramos produtos com essa busca. Tente outro termo.</div>
-      <div class="catalog-footer"><span id="productCount">12 produtos</span><span>PREÇOS DEMONSTRATIVOS • CONFIRME DISPONIBILIDADE</span></div>
-    </section>
-
-    <section class="editorial">
-      <div class="editorial-image"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=85" alt="Detalhes e design automotivo" loading="lazy"></div>
-      <div class="editorial-copy"><span class="eyebrow">NOSSA FILOSOFIA</span><h2>Não é só sobre o carro.<br>É sobre <span>como ele representa você.</span></h2><p>A DRIVE ZONE nasceu da paixão pelos detalhes. Reunimos acessórios que unem estética, praticidade e personalidade para quem acredita que cada escolha faz diferença.</p><a class="text-link dark-link" href="#sobre">Conheça a nossa essência <span>↗</span></a></div>
-    </section>
-
-    <section class="service-strip">
-      <div><span>01</span><b>Escolha seus produtos</b><p>Explore as categorias e monte sua seleção.</p></div>
-      <div><span>02</span><b>Revise sua sacola</b><p>Confira quantidades e valores antes de pedir.</p></div>
-      <div><span>03</span><b>Envie seu pedido</b><p>Entre em contato para confirmar os detalhes.</p></div>
-    </section>
-
-    <section class="about-section section" id="sobre">
-      <span class="eyebrow">DRIVE ZONE / SOBRE A MARCA</span>
-      <h2>Estilo com intenção.<br><span>Detalhes com personalidade.</span></h2>
-      <p>Somos uma loja focada em acessórios e produtos automotivos. Nosso propósito é oferecer uma experiência de compra clara, moderna e voltada a quem deseja personalizar e cuidar do próprio veículo.</p>
-    </section>
-
-    <section class="contact-section" id="contato">
-      <div class="contact-intro"><span class="eyebrow">ESTAMOS AQUI PARA AJUDAR</span><h2>Vamos conversar<br>sobre o seu próximo <span>acessório?</span></h2><p>Dúvidas sobre produtos, compatibilidade ou pedidos? Escolha o canal que preferir ou envie sua mensagem.</p>
-        <div class="contact-links">
-          <a href="mailto:contato@drivezone.com.br"><span class="contact-icon">✉</span><span><small>E-MAIL</small><b>contato@drivezone.com.br</b></span><span>↗</span></a>
-          <a href="#" id="whatsappContact" target="_blank" rel="noopener"><span class="contact-icon">◉</span><span><small>WHATSAPP</small><b>Fale com a nossa equipe</b></span><span>↗</span></a>
-        </div>
-      </div>
-      <form class="contact-form" id="contactForm">
-        <h3>Envie uma mensagem</h3>
-        <p>Preencha os campos e prepare sua mensagem para nosso atendimento.</p>
-        <label>Seu nome<input name="name" required placeholder="Como podemos chamar você?"></label>
-        <label>Seu e-mail<input name="email" type="email" required placeholder="voce@email.com"></label>
-        <label>Assunto<select name="subject"><option>Dúvida sobre produto</option><option>Compatibilidade</option><option>Acompanhar pedido</option><option>Parceria comercial</option><option>Outro assunto</option></select></label>
-        <label>Mensagem<textarea name="message" required rows="4" placeholder="Conte como podemos ajudar..."></textarea></label>
-        <button class="btn btn-red full-btn" type="submit">PREPARAR MENSAGEM ↗</button>
-        <small class="form-note">Seu aplicativo de e-mail será aberto para enviar a mensagem.</small>
-      </form>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <a href="#inicio" class="brand"><span class="brand-mark">D<span>Z</span></span><span class="brand-name">DRIVE <b>ZONE</b><small>AUTOMOTIVE LIFESTYLE</small></span></a>
-    <p>Personalidade em cada detalhe.</p>
-    <div class="footer-links"><a href="#colecao">Produtos</a><a href="#contato">Contato</a><a href="mailto:contato@drivezone.com.br">E-mail</a></div>
-    <small>© 2026 DRIVE ZONE. Projeto de loja virtual.</small>
-  </footer>
-
-  <div class="cart-backdrop" id="cartBackdrop"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
-    <div class="cart-header"><div><span class="eyebrow">SUA SELEÇÃO</span><h2>Sacola <span id="cartTitleCount">(0)</span></h2></div><button id="closeCart" class="close-button" aria-label="Fechar carrinho">×</button></div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-empty" id="cartEmpty"><span>◇</span><h3>Sua sacola está vazia.</h3><p>Explore nossa coleção e encontre seus próximos acessórios.</p><button class="btn btn-dark" id="continueShopping">EXPLORAR PRODUTOS</button></div>
-    <div class="cart-footer" id="cartFooter">
-      <div class="subtotal"><span>Subtotal</span><b id="cartSubtotal">R$ 0,00</b></div>
-      <p>Frete e disponibilidade serão confirmados no atendimento.</p>
-      <button class="btn btn-red full-btn" id="checkoutButton">CONTINUAR COM O PEDIDO ↗</button>
-      <small>Você revisará seus dados antes de enviar o pedido.</small>
     </div>
-  </aside>
+  </section>
 
-  <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
-    <div class="checkout-card">
-      <button class="close-button checkout-close" id="closeCheckout" aria-label="Fechar">×</button>
-      <span class="eyebrow">ÚLTIMA ETAPA</span>
-      <h2>Seus dados para o <span>pedido.</span></h2>
-      <p>Preencha seus dados. O pedido será preparado para envio por WhatsApp ou e-mail. O pagamento ainda será combinado com a loja.</p>
-      <form id="checkoutForm">
-        <label>Nome completo<input name="customerName" required autocomplete="name" placeholder="Seu nome"></label>
-        <label>E-mail<input name="customerEmail" type="email" required autocomplete="email" placeholder="voce@email.com"></label>
-        <label>Telefone<input name="customerPhone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
-        <label>Cidade e estado<input name="customerCity" required autocomplete="address-level2" placeholder="Cidade - UF"></label>
-        <label>Forma de contato preferida<select name="contactMethod"><option value="WhatsApp">WhatsApp</option><option value="E-mail">E-mail</option></select></label>
-        <label>Observações (opcional)<textarea name="notes" rows="2" placeholder="Compatibilidade, entrega ou dúvidas"></textarea></label>
-        <div class="checkout-total"><span>Subtotal demonstrativo</span><b id="checkoutTotal">R$ 0,00</b></div>
-        <button class="btn btn-red full-btn" type="submit">PREPARAR MEU PEDIDO ↗</button>
-        <small class="form-note">Este site é uma demonstração: não cobra pagamentos nem confirma estoque ou frete.</small>
-      </form>
+  <!-- GARANTIA E QUALIDADE -->
+  <section class="quality-section" id="qualidade">
+    <div class="quality-grid">
+      <div class="quality-card">
+        <i class="fa-solid fa-award quality-icon"></i>
+        <h3>Qualidade Premium</h3>
+        <p>Acessórios importados e homologados pelas melhores marcas do mercado automotivo.</p>
+      </div>
+      <div class="quality-card">
+        <i class="fa-solid fa-wrench quality-icon"></i>
+        <h3>Instalação Especializada</h3>
+        <p>Mão de obra treinada para manter a originalidade e a garantia de fábrica do seu veículo.</p>
+      </div>
+      <div class="quality-card">
+        <i class="fa-solid fa-shield-check quality-icon"></i>
+        <h3>Garantia Estendida</h3>
+        <p>Garantia total de produtos e serviços para você rodar com tranquilidade.</p>
+      </div>
+      <div class="quality-card">
+        <i class="fa-solid fa-car-side quality-icon"></i>
+        <h3>Estilo Exclusivo</h3>
+        <p>Personalizações sob medida para transformar seu carro em um projeto único.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE PRODUTOS COM ABAS -->
+  <section id="produtos">
+    <div class="section-title">
+      <h2>Nosso Catálogo</h2>
+      <p class="section-subtitle">Escolha a categoria e monte seu projeto</p>
+    </div>
+
+    <!-- ABAS -->
+    <div class="category-tabs">
+      <button class="tab-btn active" data-category="all">Todos os Itens</button>
+      <button class="tab-btn" data-category="rodas">Rodas & Performance</button>
+      <button class="tab-btn" data-category="películas">Películas & Estética</button>
+      <button class="tab-btn" data-category="interiores">Acessórios Internos</button>
+      <button class="tab-btn" data-category="serviços">Oficina & Serviços</button>
+    </div>
+
+    <!-- GRID DE PRODUTOS -->
+    <div class="products-grid" id="products-container">
+      <!-- Gerado via JS -->
+    </div>
+  </section>
+
+  <!-- CALCULADORA DE PELÍCULAS -->
+  <section class="calculator-section" id="calculadora">
+    <div class="calculator-box">
+      <div class="calculator-header">
+        <h3><i class="fa-solid fa-film"></i> Simular Película Nanocerâmica</h3>
+        <p>Calcule o investimento para a enfilmagem do seu carro</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="form-group">
+          <label for="car-type">Porte do Veículo</label>
+          <select class="form-control" id="car-type">
+            <option value="450">Hatch / Compacto</option>
+            <option value="550">Sedan Médio</option>
+            <option value="650">SUV / Crossover</option>
+            <option value="750">Pick-up / Grande</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="film-type">Tipo de Película</label>
+          <select class="form-control" id="film-type">
+            <option value="1">G5 Tintada Padrão</option>
+            <option value="1.5">G20 Alta Rejeição Térmica</option>
+            <option value="2.2">Nanocerâmica Premium (Retém 95% do calor)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="coverage-type">Cobertura</label>
+          <select class="form-control" id="coverage-type">
+            <option value="1">Laterais + Traseiro</option>
+            <option value="1.4">Completo (Com Para-brisa)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div>
+          <span class="calc-label">Valor Estimado com Instalação:</span>
+          <div class="calc-price" id="calc-total">R$ 450,00</div>
+        </div>
+        <button class="btn-primary" id="add-film-btn"><i class="fa-solid fa-plus"></i> Adicionar ao Pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO DE OFICINA -->
+  <section class="workshop-section" id="oficina">
+    <div class="workshop-grid">
+      <div>
+        <h2>Agende sua Visita na <span>Oficina</span></h2>
+        <p class="workshop-desc">Oferecemos serviços completos de alinhamento 3D, balanceamento, revisão de suspensão, instalação de iluminação em LED e centrais multimídia com garantia total.</p>
+        
+        <form id="appointment-form">
+          <div class="form-group mb-15">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" required placeholder="Ex: Roberto Silva">
+          </div>
+          <div class="form-group mb-15">
+            <label>Modelo do Veículo & Ano</label>
+            <input type="text" class="form-control" required placeholder="Ex: Golf TSI 2020">
+          </div>
+          <div class="form-group mb-15">
+            <label>Serviço Desejado</label>
+            <select class="form-control" required>
+              <option>Instalação de Película / Insulfilm</option>
+              <option>Troca de Rodas & Pneus</option>
+              <option>Instalação de Som & Multimídia</option>
+              <option>Instalação de Kit LED / Neon</option>
+              <option>Revisão de Oficina / Suspensão</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Confirmar Agendamento via WhatsApp</button>
+        </form>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=800&auto=format&fit=crop" alt="Oficina Drive Zone" class="workshop-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERLAY E CARRINHO SLIDE-OUT -->
+  <div class="overlay" id="overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Seu Carrinho</h3>
+      <button class="close-cart" id="close-cart-btn">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cart-items-container">
+      <!-- Itens do carrinho JS -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="total-price-text" id="cart-total-price">R$ 0,00</span>
+      </div>
+      <button class="btn-primary btn-block" id="checkout-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp</button>
     </div>
   </div>
 
-  <div class="toast" id="toast" role="status"></div>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5541999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Drive%20Zone." target="_blank" class="whatsapp-btn" aria-label="Atendimento via WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo-container footer-logo">
+          <img src="127181.jpg" alt="Drive Zone Logo" style="height: 40px;" onerror="this.style.display='none'">
+        </a>
+        <p>"Deixe seu carro a sua cara na Drive Zone, seu carro, seu estilo."</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#calculadora">Películas</a></li>
+          <li><a href="#oficina">Oficina</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <p><i class="fa-solid fa-clock icon-red"></i> Seg a Sex: 08h às 18h<br>Sábados: 08h às 13h</p>
+        <p style="margin-top: 10px;"><i class="fa-solid fa-envelope icon-red"></i> contato@drivezone.com.br</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Drive Zone - Todos os direitos reservados. Projeto Automotivo de Alta Performance.</p>
+    </div>
+  </footer>
+
+  <!-- Script JavaScript Externo -->
   <script src="script.js"></script>
 </body>
 </html>
