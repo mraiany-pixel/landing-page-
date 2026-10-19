@@ -1,99 +1,211 @@
 const menuToggle = document.querySelector("#menuToggle");
 const nav = document.querySelector("#nav");
-const modal = document.querySelector("#carModal");
+
+const productCards = [
+  ...document.querySelectorAll(".product-card")
+];
+
+const filters = [...document.querySelectorAll(".filter")];
+const searchInput = document.querySelector("#productSearch");
+const emptyState = document.querySelector("#emptyState");
+
+const modal = document.querySelector("#productModal");
 const modalTitle = document.querySelector("#modalTitle");
-const modalText = document.querySelector("#modalText");
+const modalDescription = document.querySelector("#modalDescription");
 const modalClose = document.querySelector("#modalClose");
+const modalContact = document.querySelector("#modalContact");
 
-// Atualiza o ano automaticamente no rodapé
-document.querySelector("#year").textContent =
-  new Date().getFullYear();
+const year = document.querySelector("#year");
 
-// Menu para celular
-menuToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "×" : "☰";
-});
+let selectedCategory = "Todos";
 
-// Fecha o menu ao clicar em uma seção
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
+const productDescriptions = {
+  "Organizador de console":
+    "Organizador para manter seus objetos essenciais em ordem. Consulte as medidas e a compatibilidade com seu veículo.",
 
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
+  "Iluminação ambiente LED":
+    "Iluminação para personalizar o interior do carro com um visual moderno. Consulte a instalação e a compatibilidade.",
 
-    nav.querySelectorAll("a").forEach((item) => {
-      item.classList.remove("active");
-    });
+  "Tapete automotivo":
+    "Acessório que ajuda a proteger o piso do veículo contra sujeira e desgaste. Verifique o modelo compatível.",
 
-    link.classList.add("active");
-  });
-});
+  "Detalhes externos":
+    "Acessórios para valorizar o visual externo do seu carro. Consulte as opções disponíveis.",
 
-// Informações dos carros
-const descriptions = {
-  "Porsche 911":
-    "Um ícone de engenharia e design. O Porsche 911 combina linhas clássicas, agilidade e uma experiência de condução envolvente.",
+  "Kit de personalização":
+    "Detalhes automotivos para deixar o veículo com a sua identidade. Os itens dependem do kit disponível.",
 
-  "Lamborghini":
-    "Design provocante, proporções marcantes e personalidade inconfundível. A Lamborghini representa ousadia em cada detalhe.",
-
-  "Ferrari":
-    "Uma história construída nas pistas e traduzida em carros emocionantes, com design italiano e espírito competitivo."
+  "Acessório de áudio":
+    "Acessórios para complementar a experiência sonora no veículo. Consulte as especificações e a instalação."
 };
 
-// Abre a janela de informações de cada modelo
-document.querySelectorAll("[data-car]").forEach((button) => {
+// FILTROS E BUSCA DE PRODUTOS
+function applyFilters() {
+  const term = searchInput
+    ? searchInput.value.trim().toLowerCase()
+    : "";
+
+  let count = 0;
+
+  productCards.forEach((card) => {
+    const category = card.dataset.category || "";
+    const name = card.dataset.name || "";
+    const text = card.textContent || "";
+
+    const categoryMatches =
+      selectedCategory === "Todos" ||
+      category === selectedCategory;
+
+    const searchMatches =
+      !term ||
+      name.toLowerCase().includes(term) ||
+      text.toLowerCase().includes(term);
+
+    const visible = categoryMatches && searchMatches;
+
+    card.hidden = !visible;
+
+    if (visible) {
+      count++;
+    }
+  });
+
+  if (emptyState) {
+    emptyState.hidden = count !== 0;
+  }
+}
+
+// CLIQUES NOS FILTROS
+filters.forEach((button) => {
   button.addEventListener("click", () => {
-    const car = button.dataset.car;
+    selectedCategory = button.dataset.filter || "Todos";
 
-    modalTitle.textContent = car;
+    filters.forEach((filter) => {
+      filter.classList.toggle("active", filter === button);
+    });
 
-    modalText.textContent =
-      descriptions[car] ||
-      "Explore o design, a história e a personalidade deste ícone automotivo.";
-
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-
-    document.body.style.overflow = "hidden";
-
-    modalClose.focus();
+    applyFilters();
   });
 });
 
-// Fecha a janela de informações
+// CAMPO DE PESQUISA
+if (searchInput) {
+  searchInput.addEventListener("input", applyFilters);
+}
+
+// CATEGORIAS DA PÁGINA INICIAL
+document.querySelectorAll("[data-category-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    selectedCategory = link.dataset.categoryLink || "Todos";
+
+    filters.forEach((filter) => {
+      filter.classList.toggle(
+        "active",
+        filter.dataset.filter === selectedCategory
+      );
+    });
+
+    applyFilters();
+  });
+});
+
+// ABRIR DETALHES DO PRODUTO
+function openModal(name) {
+  if (!modal || !modalTitle || !modalDescription) {
+    return;
+  }
+
+  modalTitle.textContent = name;
+
+  modalDescription.textContent =
+    productDescriptions[name] ||
+    "Entre em contato com a loja para consultar detalhes, disponibilidade e compatibilidade.";
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  if (modalClose) {
+    modalClose.focus();
+  }
+}
+
+// FECHAR DETALHES DO PRODUTO
 function closeModal() {
+  if (!modal) {
+    return;
+  }
+
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
-
   document.body.style.overflow = "";
 }
 
-modalClose.addEventListener("click", closeModal);
-
-// Fecha ao clicar fora da janela
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
+// BOTÕES DOS PRODUTOS
+document.querySelectorAll("[data-product]").forEach((button) => {
+  button.addEventListener("click", () => {
+    openModal(button.dataset.product || "Produto");
+  });
 });
 
-// Fecha ao pressionar ESC
+if (modalClose) {
+  modalClose.addEventListener("click", closeModal);
+}
+
+// FECHAR CLICANDO FORA DA JANELA
+if (modal) {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
+
+// FECHAR COM A TECLA ESC
 document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    modal.classList.contains("open")
-  ) {
+  if (event.key === "Escape") {
     closeModal();
   }
 });
 
-// Fecha a janela ao ir para a seção de contato
-document.querySelector("#modalContact").addEventListener(
-  "click",
-  closeModal
-);
+// BOTÃO DE CONTATO DA JANELA
+if (modalContact) {
+  modalContact.addEventListener("click", closeModal);
+}
+
+// MENU PARA CELULARES
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    menuToggle.textContent = isOpen ? "×" : "☰";
+  });
+
+  // FECHAR MENU AO CLICAR EM UM LINK
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+
+      nav.querySelectorAll("a").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      link.classList.add("active");
+    });
+  });
+}
+
+// INICIAR CATÁLOGO
+applyFilters();
