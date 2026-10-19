@@ -1,16 +1,131 @@
-// DADOS DE PRODUTOS
+// ==========================================
+// 1. DADOS DOS PRODUTOS DO CATÁLOGO
+// ==========================================
 const products = [
-  { id: 1, name: "Jogo de Rodas Esportivas Liga Leve Aro 18\"", category: "rodas", price: 3890.00, tag: "Destaque", desc: "Rodas com acabamento diamantado e liga de alta resistência.", details: "Desenvolvidas para garantir máxima leveza e resistência estrutural. Compatível com furações 4x100 e 5x100.", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=600&auto=format&fit=crop" },
-  { id: 2, name: "Capa de Banco Sob Medida Couro Nappa", category: "internos", price: 1200.00, tag: "Exclusivo", desc: "Revestimento em couro nobre com costuras esportivas vermelhas.", details: "Modelagem sob medida mantendo o acionamento de airbags e funções elétricas dos bancos originais.", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=600&auto=format&fit=crop" },
-  { id: 3, name: "Central Multimídia Android 4K 10\"", category: "internos", price: 1890.00, tag: "Tecnologia", desc: "CarPlay e Android Auto sem fio com tela IPS antirreflexo.", details: "Processador octa-core rápido, GPS offline, Bluetooth 5.0 e total integração com comandos do volante.", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" },
-  { id: 4, name: "Kit Iluminação LED Neon RGB Fibra Óptica", category: "iluminacao", price: 299.00, tag: "Estilo", desc: "Fitas de LED para painel e portas com controle via App.", details: "Mais de 16 milhões de cores ativadas por aplicativo Bluetooth ou sincronização com a música.", img: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=600&auto=format&fit=crop" },
-  { id: 5, name: "Suporte Magnético Magsafe Articulado", category: "organizacao", price: 119.00, tag: "Praticidade", desc: "Fixação ultra forte para saídas de ar ou painel com rotação 360°.", details: "Compatível com todos os smartphones, acompanha placas magnéticas de alta aderência.", img: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=600&auto=format&fit=crop" },
-  { id: 6, name: "Capa para Volante Couro Costurado à Mão", category: "internos", price: 149.00, tag: "Personalização", desc: "Revestimento em Couro / Alcantara com linha de costura vermelha.", details: "Garante pegada firme e protege o volante original contra o desgaste solar e suor.", img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop" },
-  { id: 7, name: "Kit Cuidados Auto: Microfibra + Aromatizante Premium", category: "cuidados", price: 89.00, tag: "Cuidados", desc: "Toalhas de microfibra gramatura alta + odorizador de cabine.", details: "Panos de secagem rápida livre de riscos para pintura e cheiro exclusivo Drive Zone.", img: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=600&auto=format&fit=crop" },
-  { id: 8, name: "Escapamento Esportivo Inox 304 Ponteira Dupla", category: "rodas", price: 1450.00, tag: "Performance", desc: "Ronco encorpado esportivo e acabamento em Inox polido.", details: "Construção plug & play sem necessidade de soldas complexas no escapamento original.", img: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" }
+  // RODAS & PERFORMANCE
+  { 
+    id: 1, 
+    name: "Jogo de Rodas Esportivas Liga Leve Aro 18\"", 
+    category: "rodas", 
+    price: 3890.00, 
+    tag: "Destaque", 
+    desc: "Rodas com acabamento diamantado e liga de alta resistência.", 
+    details: "Desenvolvidas para garantir máxima leveza e resistência estrutural. Compatível com furações 4x100 e 5x100. Garantia de 3 anos.", 
+    img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 2, 
+    name: "Escapamento Esportivo Inox 304 Ponteira Dupla", 
+    category: "rodas", 
+    price: 1450.00, 
+    tag: "Performance", 
+    desc: "Ronco encorpado esportivo e acabamento em Inox polido.", 
+    details: "Construção plug & play em aço inoxidável 304 sem necessidade de soldas complexas no escapamento original.", 
+    img: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" 
+  },
+
+  // PRODUTOS PARTE INTERNA
+  { 
+    id: 3, 
+    name: "Capa de Banco Sob Medida Couro Nappa", 
+    category: "internos", 
+    price: 1200.00, 
+    tag: "Exclusivo", 
+    desc: "Revestimento em couro nobre com costuras esportivas vermelhas.", 
+    details: "Modelagem sob medida mantendo o acionamento de airbags laterais e funções elétricas dos bancos originais.", 
+    img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 4, 
+    name: "Central Multimídia Android 4K 10\"", 
+    category: "internos", 
+    price: 1890.00, 
+    tag: "Tecnologia", 
+    desc: "CarPlay e Android Auto sem fio com tela IPS antirreflexo.", 
+    details: "Processador octa-core rápido, GPS offline, Bluetooth 5.0 e total integração com comandos do volante originais.", 
+    img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 5, 
+    name: "Capa para Volante Couro Costurado à Mão", 
+    category: "internos", 
+    price: 149.00, 
+    tag: "Personalização", 
+    desc: "Revestimento em Couro / Alcantara com linha de costura vermelha.", 
+    details: "Garante pegada firme, maior aderência ao dirigir e protege o volante original contra desgaste solar e suor.", 
+    img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop" 
+  },
+
+  // ILUMINAÇÃO & LED
+  { 
+    id: 6, 
+    name: "Par de Lâmpadas Super LED Ultrafrota Ultra-Branca", 
+    category: "iluminacao", 
+    price: 249.00, 
+    tag: "Segurança", 
+    desc: "Lâmpadas automotivas de alto alcance, foco preciso e iluminação 6000K.", 
+    details: "Chip LED avançado com dissipador de calor integrado em alumínio aeronáutico. Foco perfeito sem ofuscar outros motoristas.", 
+    img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 7, 
+    name: "Kit Fita LED RGB Ambient Light DRL Decorativa", 
+    category: "iluminacao", 
+    price: 299.00, 
+    tag: "Estilo", 
+    desc: "Luzes decorativas para painel, assoalho e faróis com aplicativo Bluetooth.", 
+    details: "Mais de 16 milhões de cores selecionáveis por telemóvel/celular, modos rítmicos que acompanham a música e instalação embutida.", 
+    img: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=600&auto=format&fit=crop" 
+  },
+
+  // CONFORTO & PRATICIDADE
+  { 
+    id: 8, 
+    name: "Carregador Veicular Turbo USB Dual QuickCharge 3.0", 
+    category: "organizacao", 
+    price: 79.00, 
+    tag: "Praticidade", 
+    desc: "Carregamento ultra rápido para smartphones e tablets com corpo metálico.", 
+    details: "Dupla saída USB QuickCharge para carregar dois dispositivos simultaneamente com proteção contra sobrecarga.", 
+    img: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 9, 
+    name: "Suporte Magnético Magsafe com Cabo USB Reforçado", 
+    category: "organizacao", 
+    price: 119.00, 
+    tag: "Conforto", 
+    desc: "Suporte para celular articulado de alta fixação com rotação 360°.", 
+    details: "Ímãs de neodímio ultra fortes que seguram o celular em terrenos acidentados sem soltar.", 
+    img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=80&w=600&auto=format&fit=crop" 
+  },
+
+  // CUIDADOS & LIMPEZA
+  { 
+    id: 10, 
+    name: "Kit Panos de Microfibra sem Costura (400 GSM - 4 Unidades)", 
+    category: "cuidados", 
+    price: 69.00, 
+    tag: "Limpeza", 
+    desc: "Panos de microfibra de alta densidade para polimento e secagem sem riscar.", 
+    details: "Toalhas macias com microfibras absorventes ideais para pintura, vidros e acabamentos internos delicados.", 
+    img: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=600&auto=format&fit=crop" 
+  },
+  { 
+    id: 11, 
+    name: "Kit Limpeza Automotiva + Aromatizante Premium Drive Zone", 
+    category: "cuidados", 
+    price: 139.00, 
+    tag: "Cuidados", 
+    desc: "Produtos de limpeza automotiva completos para pintura, estofados e interior.", 
+    details: "Acompanha shampoo neutro concentrado, limpa plásticos com silicone fosco e aromatizante exclusivo de cabine.", 
+    img: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=600&auto=format&fit=crop" 
+  }
 ];
 
-// DADOS DE SERVIÇOS VARIADOS
+// ==========================================
+// 2. DADOS DOS SERVIÇOS VARIADOS
+// ==========================================
 const servicesData = [
   { id: 's1', name: 'Alinhamento 3D + Balanceamento Laser', category: 'mecanica', price: 180.00, desc: 'Calibragem precisa para máxima durabilidade dos pneus.' },
   { id: 's2', name: 'Instalação de Insulfilm Nanocerâmico', category: 'estetica', price: 650.00, desc: 'Proteção contra 95% do calor solar UV.' },
@@ -22,10 +137,17 @@ const servicesData = [
   { id: 's8', name: 'Diagnóstico Eletrônico via Scanner 3D', category: 'eletronica', price: 150.00, desc: 'Leitura de erros do painel e injeção eletrônica.' }
 ];
 
+// ==========================================
+// 3. VARIÁVEIS DE ESTADO DO CARRINHO E SERVIÇOS
+// ==========================================
 let cart = [];
 let selectedServices = [];
 
-// RENDERIZAR PRODUTOS
+// ==========================================
+// 4. FUNÇÕES DE RENDERIZAÇÃO
+// ==========================================
+
+// Renderizar Produtos do Catálogo
 function renderProducts(filter) {
   const container = document.getElementById('products-grid-container');
   if (!container) return;
@@ -59,7 +181,7 @@ function renderProducts(filter) {
   });
 }
 
-// RENDERIZAR SERVIÇOS
+// Renderizar Serviços Variados
 function renderServices(filter = 'all') {
   const container = document.getElementById('services-grid-container');
   if(!container) return;
@@ -107,7 +229,9 @@ function updateServicesSummary() {
   document.getElementById('selected-services-total').innerText = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
 }
 
-// CARRINHO
+// ==========================================
+// 5. GESTÃO DO CARRINHO DE COMPRAS
+// ==========================================
 function addToCart(id) {
   const prod = products.find(p => p.id === id);
   cart.push(prod);
@@ -155,7 +279,9 @@ function toggleCart(open) {
   }
 }
 
-// MODAL DETALHES
+// ==========================================
+// 6. MODAL DE DETALHES DO PRODUTO
+// ==========================================
 function openModal(id) {
   const p = products.find(item => item.id === id);
   document.getElementById('modal-content').innerHTML = `
@@ -173,12 +299,14 @@ function closeModal() {
   document.getElementById('product-modal').classList.remove('active');
 }
 
-// EVENTOS
+// ==========================================
+// 7. INICIALIZAÇÃO E EVENTOS DOM
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts('all');
   renderServices('all');
 
-  // Abas do catálogo
+  // Abas do catálogo de produtos
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -187,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Abas de serviços
+  // Abas de serviços variados
   document.querySelectorAll('.service-tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.service-tab-btn').forEach(b => b.classList.remove('active'));
@@ -196,18 +324,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Carrinho
+  // Eventos do Carrinho
   document.getElementById('open-cart').addEventListener('click', () => toggleCart(true));
   document.getElementById('close-cart').addEventListener('click', () => toggleCart(false));
   document.getElementById('drawer-overlay').addEventListener('click', () => toggleCart(false));
 
-  // Modal
+  // Eventos do Modal
   document.getElementById('close-modal').addEventListener('click', closeModal);
   document.getElementById('product-modal').addEventListener('click', (e) => {
     if(e.target === document.getElementById('product-modal')) closeModal();
   });
 
-  // Checkout no WhatsApp
+  // Finalizar Compras no WhatsApp
   document.getElementById('checkout-whatsapp').addEventListener('click', () => {
     if(cart.length === 0) {
       alert("O carrinho está vazio!");
@@ -223,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(msg)}`, '_blank');
   });
 
-  // Enviar Serviços no WhatsApp
+  // Enviar Orçamento de Serviços Variados no WhatsApp
   document.getElementById('send-services-whatsapp').addEventListener('click', () => {
     if(selectedServices.length === 0) {
       alert("Selecione pelo menos um serviço da lista!");
@@ -239,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(`https://wa.me/5541999999999?text=${encodeURIComponent(msg)}`, '_blank');
   });
 
-  // Agendamento Form
+  // Formulário de Agendamento da Oficina
   document.getElementById('schedule-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('client-name').value;
